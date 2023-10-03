@@ -1,4 +1,4 @@
-function validateForm() {
+function validateFormInscription() {
     var username = document.getElementById("username").value;
     var nom = document.getElementById("nom").value;
     var prenom = document.getElementById("prenom").value;

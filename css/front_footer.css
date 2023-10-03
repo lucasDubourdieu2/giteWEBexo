@@ -1,0 +1,48 @@
+/* Footer styling */
+.footer {
+    background: #222;
+    color: white;
+    padding: 20px;
+    align-items: center;
+    text-align: center;
+}
+.doubleSection{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.left-section p,
+.right-section p {
+    font-size: 16px;
+    line-height: 1.5; /* Ajoutez cette ligne pour régler l'espacement entre les lignes */
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #03989E;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #006d6d;
+}
+
+.mentions-legales {
+    color: white;
+    text-decoration: none;
+    display: block; 
+    margin-top: 10px; 
+}
+
+.mentions-legales a {
+    color: white;
+    text-decoration: none;
+}
+
+.mentions-legales a:hover {
+    text-decoration: underline;
+}
