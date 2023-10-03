@@ -1,0 +1,87 @@
+.coord {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.carte {
+    width: 96%;
+    margin: 15px;
+    padding: 10px 40px;
+    background: #FCFCFC;
+    border-radius: 5px; 
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+ul {
+    list-style: none;
+}
+
+iframe {
+    width: 100%;
+    height: 450px;
+}
+
+.coordonnees {
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    background: #FCFCFC;
+    border-radius: 5px;
+    width: 95%;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+}
+.adresse {
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    background: #FCFCFC;
+    border-radius: 5px;
+    width: 95%;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);    
+}
+
+@media screen and (max-width: 640px) {
+    iframe {
+        width: 100%;
+        height: 650px;
+    }
+
+    .coordonnees {
+        width: 90%;
+    }
+
+    .adresse {
+        width: 90%;   
+    }
+}
+
+@media screen and (min-width: 640px) {
+    .coor-container {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+    }
+    
+    .coordonnees,
+    .adresse {
+        flex: 1;
+        width: 100%;
+    }
+
+    .coordonnees {
+        margin-right: 15px;
+    }
+
+    .adresse {
+        margin-right: 15px;
+    }
+}
+
+
+
