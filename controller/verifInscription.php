@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     }
     // Préparez une requête d'insertion avec une déclaration préparée
-    $query = "INSERT INTO client (username, nom, prenom, mail, mot_de_passe, newsletter) VALUES (?, ?, ?, ?, ?, ?)";
+    $query = "INSERT INTO utilisateur (username, nom, prenom, mail, mot_de_passe, newsletter) VALUES (?, ?, ?, ?, ?, ?)";
     
     // Créez une déclaration préparée
     $stmt = $conn->prepare($query);
