@@ -1,0 +1,154 @@
+/* Styles de base */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f2f2f2;
+}
+.gestionCarousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+}
+
+.carousel-container {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    transition: transform 0.4s ease;
+}
+
+.carousel img {
+    max-width: 100%;
+    height: auto;
+}
+
+.carousel-text {
+    margin-top: 10px;
+}
+
+#imageCounter {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#prevCarouselBtn,
+#nextCarouselBtn {
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.active {
+    transform: translateX(0);
+}
+/* Titre principal */
+h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.introTarif{
+    color: red;
+}
+
+/* Paragraphe principal */
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.text-container .hidden-text {
+    display: none;
+}
+.hidden-text {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.enSavoirPlus{
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Listes */
+li {
+    font-size: 16px;
+    color: #666;
+    list-style: none;
+    text-align: center;
+}
+
+/* Lignes horizontales */
+hr {
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+/* En-tête de section */
+h2 {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Tarifs */
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+/* Langues */
+.iconFlag{
+    max-width: 60px;
+    min-width: 30px;
+    vertical-align: middle;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+}

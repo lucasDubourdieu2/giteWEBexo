@@ -1,0 +1,86 @@
+/* Style du formulaire */
+form {
+    max-width: 400px;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Style des étiquettes */
+label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+
+/* Style des champs de saisie */
+input[type="file"],
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Style du bouton de soumission */
+input[type="submit"] {
+    background-color: #03989E;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #006d6d;
+}
+
+/* Style du tableau */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Style des en-têtes de colonne */
+th {
+    background-color: #03989E;
+    color: #fff;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Style des lignes du tableau */
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Style des cellules du tableau */
+td {
+    padding: 10px;
+}
+
+/* Style du lien de suppression */
+.suppresion {
+    color: #e74c3c;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.previewCarousel{
+    width: 150px;
+    height: auto;
+}
+
+h1{
+    text-align: center;
+}
