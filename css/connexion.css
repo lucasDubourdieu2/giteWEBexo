@@ -1,13 +1,8 @@
-html body{
-    margin: 0 !important;
-    background-color: #f7f7f6;
-}
-
 .centered-content {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Centre le contenu verticalement */
-    align-items: center; /* Centre le contenu horizontalement */
+    justify-content: center;
+    align-items: center;
     height: 100vh;
     font-family: Arial, sans-serif;
     margin: 0;
@@ -53,11 +48,11 @@ button {
     font-weight: bold;
 }
 
-a {
+.lienInscription {
     text-decoration: none;
     color: #03989E;
 }
 
-a:hover {
+.lienInscription:hover {
     text-decoration: underline;
 }

@@ -3,8 +3,8 @@
 
 <head>
     <title>Site web Le gite</title>
-    <link rel="stylesheet" href="../css/front-header.css">
-    <link rel="stylesheet" href="../css/front-footer.css">
+    <link rel="stylesheet" href="../css/front_header.css">
+    <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/connexion.css">
 </head>
 
@@ -18,7 +18,7 @@
                 <input type="password" name="password" placeholder="Mot de passe" required>
                 <button type="submit">Se connecter</button>
             </form>
-            <p>Pas encore de compte ? <a href="../view/inscription.php">Inscrivez-vous</a></p>
+            <p>Pas encore de compte ? <a href="../view/inscription.php" class="lienInscription">Inscrivez-vous</a></p>
         </div>
     </div>
     <?php include '../includes/front-footer.php'; ?>
