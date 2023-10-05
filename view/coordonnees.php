@@ -3,8 +3,8 @@
 
 <head>
     <title>Site web Le gite</title>
-    <link rel="stylesheet" href="../css/front-header.css">
-    <link rel="stylesheet" href="../css/front-footer.css">
+    <link rel="stylesheet" href="../css/front_header.css">
+    <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/coordonnees.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 </head>
