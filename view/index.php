@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Site web Le gite</title>
-    <link rel="stylesheet" href="../css/front-header.css">
-    <link rel="stylesheet" href="../css/front-footer.css">
+    <link rel="stylesheet" href="../css/front_header.css">
+    <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/index.css">
 </head>
 
