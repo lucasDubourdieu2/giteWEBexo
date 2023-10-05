@@ -23,24 +23,25 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
 <body>
     <?php include '../includes/front-header.php'; ?>
     <div class="gestionCarousel">
-        <h1>Différents visuels du site</h1>
+        <h1 class="customTitle">Les images du gite :</h1>
         <div class="carousel-container">
             <div class="carousel">
                 <?php foreach ($images as $index => $image) : ?>
-                    <div class="carousel-slide <?php echo $index === 0 ? 'active' : ''; ?>">
-                        <img src="<?php echo $image['image_url']; ?>" alt="<?php echo $image['image_alt']; ?>">
+                    <div class="carousel-slide <?= $index === 0 ? 'active' : ''; ?>">
+                        <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>">
                     </div>
                 <?php endforeach; ?>
             </div>
             <div class="carousel-text">
-                <p id="imageCounter">Image 1/<?php echo count($images); ?></p>
+                <button id="prevCarouselBtn">Précédent</button>
+                <p id="imageCounter">Image 1/<?= count($images); ?></p>
+                <button id="nextCarouselBtn">Suivant</button>
             </div>
         </div>
-        <button id="prevCarouselBtn">Précédent</button>
-        <button id="nextCarouselBtn">Suivant</button>
     </div>
-        <h1>Figuiès</h1>
-        <p class="introTarif"><strong>A partir de 550€ par semaine.</strong></p>
+    <div class="intro">
+    <h1 class="titreIntro">Figuiès</h1>
+    <p class="introTarif"><strong>A partir de 550€ par semaine.</strong></p>
     </div>
     <div class="text-container">
         <p>
@@ -60,23 +61,23 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
         </p>
         <p><a href="#" id="readMoreLink" class="enSavoirPlus">En savoir plus</a></p>
     </div>
-    <div>
+    <div class="capacite">
         <hr>
         <h2>Capacité</h2>
         <li>Personne : 4</li>
         <li>Chambre : 2</li>
         <li>Personne (maximum) : 4</li>
     </div>
-    <div>
+    <div class="equipement">
         <hr>
         <h2>Equipements et services</h2>
     </div>
-    <div>
+    <div class="langues">
         <hr>
         <h2>Langues</h2>
         <img class="iconFlag" src="../img/france.png">
     </div>
-    <div>
+    <div class="tarifs">
         <hr>
         <h2>Tarifs</h2>
         <ul>
@@ -86,12 +87,17 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
             <li><strong>Nuitée Haute Saison</strong> à 110€</li>
         </ul>
     </div>
-    <div>
+    <div class="moyenPayement">
         <hr>
         <h2>Moyen de payement</h2>
         <li>Chèque</li>
         <li>Espèce</li>
         <li>Virement</li>
+    </div>
+    <div class="disponibilites">
+        <hr>
+        <h2>Disponibilités</h2>
+        <p>Ouverture à partir du 01/04/2023 jusqu'au 30/10/2023</p>
     </div>
     <?php include '../includes/front-footer.php'; ?>
 </body>

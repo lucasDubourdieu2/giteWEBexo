@@ -5,6 +5,7 @@
     padding: 20px;
     align-items: center;
     text-align: center;
+    margin-top: 20px;
 }
 .doubleSection{
     display: grid;
@@ -29,20 +30,4 @@
 
 .btn:hover {
     background-color: #006d6d;
-}
-
-.mentions-legales {
-    color: white;
-    text-decoration: none;
-    display: block; 
-    margin-top: 10px; 
-}
-
-.mentions-legales a {
-    color: white;
-    text-decoration: none;
-}
-
-.mentions-legales a:hover {
-    text-decoration: underline;
 }

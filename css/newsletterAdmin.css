@@ -1,0 +1,13 @@
+/* Style du formulaire */
+form {
+    max-width: 400px;
+    margin: auto auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+}
+h1{
+    text-align: center;
+}

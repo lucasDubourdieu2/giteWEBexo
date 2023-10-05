@@ -1,14 +1,12 @@
 <footer class="footer">
     <div class="doubleSection">
-    <div class="left-section">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse ratione repellendus sit quis enim illo, sint iusto atque libero sunt aliquam maiores tempore repudiandae, tenetur eius ipsam ea magnam mollitia!</p>
-        <a href="../view/inscription.php" class="btn">S'inscrire</a>
-    </div>
-    <div class="right-section">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi harum distinctio quisquam commodi. Consequuntur voluptate ratione modi iure minima, reiciendis facere aperiam earum sunt harum exercitationem sed ex cupiditate! Nemo.</p>
-    </div>
-    </div>
-    <div class="mentions-legales">
-        <a href="mentionLegales.php">Mentions légales</a>
+        <div class="left-section">
+            <p>Restez toujours informés des dernières actualité du gite en souscrivant à notre newsletter</p>
+            <a href="../view/newsletter.php" class="btn">S'inscrire à la newsletter</a>
+        </div>
+        <div class="right-section">
+            <p>Suivez-nous sur nos différents réseaux</p>
+            <a href="https://www.facebook.com/gitefiguies" target="_blank"><img src="../img/facebook.png" alt="logoFacebook" style="width: 50px; height:auto;"></a>
+        </div>
     </div>
 </footer>

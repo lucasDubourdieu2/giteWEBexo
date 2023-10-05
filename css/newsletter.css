@@ -1,0 +1,50 @@
+.centered-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#nom,
+#email {
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.btnNewsletter {
+    padding: 10px;
+    background-color: #03989E;
+    color: #fff;
+    border: 1px solid #005959;
+    border-radius: 3px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.btnNewsletter:hover {
+    background-color: #006d6d;
+}

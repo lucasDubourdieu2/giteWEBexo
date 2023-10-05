@@ -1,15 +1,32 @@
 <?php
+
+/**
+ * @author RUIZ Anthony <ruiza@3il.fr>
+ * @package Gestion des images du carousel
+ * @date 04-10-2023
+ */
 include("../model/db-config.php");
 
 class TbqVisuel
 {
-    private $db; // Propriété pour stocker la connexion à la base de données
+    private $db;
 
     public function __construct($db)
     {
         $this->db = $db;
     }
 
+    /**
+     * Insère une image dans la base de données.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 04-10-2023
+     * @param string $image_url L'URL de l'image à insérer.
+     * @param string $image_alt Le texte alternatif de l'image.
+     *
+     * @return bool Retourne true si l'insertion est réussie, sinon false.
+     */
     public function insertImage($image_url, $image_alt)
     {
         // Préparation de la requête SQL pour l'insertion
@@ -20,20 +37,27 @@ class TbqVisuel
             die("Erreur de préparation de la requête : " . $this->db->error);
         }
 
-        // Liaison des valeurs aux paramètres de la requête
         $stmt->bind_param("ss", $image_url, $image_alt);
 
-        // Exécution de la requête d'insertion
         if ($stmt->execute()) {
-            return true; // L'insertion a réussi
+            return true;
         } else {
-            return false; // L'insertion a échoué
+            return false;
         }
     }
 
+    /**
+     * Supprime une image de la base de données par son ID.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 04-10-2023
+     * @param int $id L'ID de l'image à supprimer.
+     *
+     * @return bool Retourne true si la suppression est réussie, sinon false.
+     */
     public function deleteImage($id)
     {
-        // Préparation de la requête SQL pour la suppression de l'image
         $sql = "DELETE FROM images WHERE id = ?";
         $stmt = $this->db->prepare($sql);
 
@@ -41,20 +65,27 @@ class TbqVisuel
             die("Erreur de préparation de la requête : " . $this->db->error);
         }
 
-        // Liaison de l'ID de l'image au paramètre de la requête
         $stmt->bind_param("i", $id);
 
-        // Exécution de la requête de suppression
         if ($stmt->execute()) {
-            return true; // La suppression a réussi
+            return true;
         } else {
-            return false; // La suppression a échoué
+            return false;
         }
     }
 
+    /**
+     * Récupère les images depuis la base de données.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 04-10-2023
+     * @param string $columns Les colonnes à récupérer (par défaut, toutes les colonnes).
+     *
+     * @return array Un tableau contenant les images récupérées.
+     */
     public function getImagesFromDatabase($columns = "*")
     {
-        // Préparation de la requête SQL
         $sql = "SELECT $columns FROM images";
         $stmt = $this->db->prepare($sql);
 
@@ -62,15 +93,11 @@ class TbqVisuel
             die("Erreur de préparation de la requête : " . $this->db->error);
         }
 
-        // Exécution de la requête
         if ($stmt->execute()) {
-            // Liaison des résultats à des variables
             $stmt->bind_result($id, $image_url, $image_alt);
 
-            // Initialiser un tableau pour stocker les images
             $images = array();
 
-            // Récupérer les images dans le tableau
             while ($stmt->fetch()) {
                 $images[] = array(
                     'id' => $id,
@@ -84,60 +111,79 @@ class TbqVisuel
         }
     }
 
+    /**
+     * Obtient le chemin de l'image par son ID.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 04-10-2023
+     * @param int $id L'ID de l'image à récupérer.
+     *
+     * @return string|null Retourne le chemin de l'image ou null si elle n'est pas trouvée.
+     */
     public function getImagePathById($id)
-{
-    // Préparation de la requête SQL
-    $sql = "SELECT image_url FROM images WHERE id = ?";
-    $stmt = $this->db->prepare($sql);
+    {
+        $sql = "SELECT image_url FROM images WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
 
-    if (!$stmt) {
-        die("Erreur de préparation de la requête : " . $this->db->error);
-    }
-
-    // Liaison de l'ID au paramètre de la requête
-    $stmt->bind_param("i", $id);
-
-    // Exécution de la requête
-    if ($stmt->execute()) {
-        // Liaison des résultats à des variables
-        $stmt->bind_result($image_url);
-
-        // Récupérer le chemin du fichier
-        if ($stmt->fetch()) {
-            return $image_url;
-        } else {
-            return null; // L'image n'a pas été trouvée
+        if (!$stmt) {
+            die("Erreur de préparation de la requête : " . $this->db->error);
         }
-    } else {
-        die("Erreur lors de l'exécution de la requête : " . $stmt->error);
+
+        $stmt->bind_param("i", $id);
+
+        if ($stmt->execute()) {
+            $stmt->bind_result($image_url);
+
+            if ($stmt->fetch()) {
+                return $image_url;
+            } else {
+                return null;
+            }
+        } else {
+            die("Erreur lors de l'exécution de la requête : " . $stmt->error);
+        }
     }
-}
 
-public function updateImageName($image_id, $new_image_name)
-{
-    // Préparation de la requête SQL pour la mise à jour du nom de l'image
-    $sql = "UPDATE images SET image_url = ? WHERE id = ?";
-    $stmt = $this->db->prepare($sql);
+    /**
+     * Met à jour le nom de l'image par son ID.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 04-10-2023
+     * @param int $image_id L'ID de l'image à mettre à jour.
+     * @param string $new_image_name Le nouveau nom de l'image.
+     *
+     * @return bool Retourne true si la mise à jour est réussie, sinon false.
+     */
+    public function updateImageName($image_id, $new_image_name)
+    {
+        $sql = "UPDATE images SET image_url = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
 
-    if (!$stmt) {
-        die("Erreur de préparation de la requête : " . $this->db->error);
+        if (!$stmt) {
+            die("Erreur de préparation de la requête : " . $this->db->error);
+        }
+
+        $stmt->bind_param("si", $new_image_name, $image_id);
+
+        if ($stmt->execute()) {
+            return true; 
+        } else {
+            return false;
+        }
     }
 
-    // Liaison des valeurs aux paramètres de la requête
-    $stmt->bind_param("si", $new_image_name, $image_id);
-
-    // Exécution de la requête de mise à jour
-    if ($stmt->execute()) {
-        return true; // La mise à jour a réussi
-    } else {
-        return false; // La mise à jour a échoué
+    /**
+     * Obtient l'ID de la dernière image insérée.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 04-10-2023
+     * @return int L'ID de la dernière image insérée.
+     */
+    public function getLastInsertedId()
+    {
+        return $this->db->insert_id;
     }
-}
-
-public function getLastInsertedId()
-{
-    return $this->db->insert_id;
-}
-
-
 }

@@ -17,6 +17,7 @@ session_start();
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             ?>
                     <li class="item"><a href="../view/uploadCarousel.php">Panel Carousel</a></li>
+                    <li class="item"><a href="../view/gestionNewsletter.php">Gérer newsletter</a></li>
             <?php
                 }
             ?>
