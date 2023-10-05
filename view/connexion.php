@@ -13,8 +13,8 @@
     <div class="centered-content">
         <div class="container">
             <h1>Connexion</h1>
-            <form action="controller/verifConnexion.php" method="POST">
-                <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+            <form action="../controller/verifConnexion.php" method="POST">
+                <input type="text" name="mail" placeholder="Email" required>
                 <input type="password" name="password" placeholder="Mot de passe" required>
                 <button type="submit">Se connecter</button>
             </form>
