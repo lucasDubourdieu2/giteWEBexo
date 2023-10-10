@@ -14,7 +14,7 @@ function initMap() {
         maxZoom: 20
     }).addTo(macarte);
     // Nous ajoutons un marqueur
-    var marker = L.marker([lat, lon]).addTo(macarte).bindPopup("Gite Figuies").openPopup();
+    var marker = L.marker([lat, lon]).addTo(macarte).bindPopup("140 rue de Figuiès, 12330 Salles-la-Source").openPopup();
 }
 window.onload = function () {
     // Fonction d'initialisation qui s'exécute lorsque le DOM est chargé

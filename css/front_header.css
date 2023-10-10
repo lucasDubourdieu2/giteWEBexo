@@ -18,7 +18,7 @@ ul {
     list-style-type: none;
 }
 
-a {
+.lienMenu {
     color: white;
     text-decoration: none;
 }
