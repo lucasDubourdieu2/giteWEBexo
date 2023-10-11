@@ -17,15 +17,27 @@
     </header>
     <main>
         <div id='calendar'></div>
-        <form id="eventForm">
+        <?php
+            // Vérifiez l'état de la session
+            if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
+                // Vérifiez le rôle de l'utilisateur
+                if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+            ?>
+        <form action="../controller/calendrier.php" method="POST" id="eventForm">
             <label for="eventName">Nom de l'événement:</label>
-            <input type="text" id="eventName" required>
+            <input name="nom" type="text" id="eventName" required>
             <label for="eventStartDate">Date de début:</label>
-            <input type="date" id="eventStartDate" required>
+            <input name="dateDeb" type="date" id="eventStartDate" required>
             <label for="eventEndDate">Date de fin:</label>
-            <input type="date" id="eventEndDate" required>
-            <button type="button" id="addEventBtn">Ajouter l'événement</button>
+            <input name="dateFin" type="date" id="eventEndDate" required>
+<!--            <button  type="submit" id="addEventBtn">Ajouter l'événement</button> -->
+            <button  type="submit" >Ajouter l'événement</button>
      </form>
+
+     <?php
+                }
+            }
+     ?>
     </main>
 
     <footer>

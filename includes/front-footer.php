@@ -8,7 +8,4 @@
         <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Modi harum distinctio quisquam commodi. Consequuntur voluptate ratione modi iure minima, reiciendis facere aperiam earum sunt harum exercitationem sed ex cupiditate! Nemo.</p>
     </div>
     </div>
-    <div class="mentions-legales">
-        <a href="mentionLegales.php">Mentions légales</a>
-    </div>
 </footer>

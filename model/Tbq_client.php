@@ -2,6 +2,7 @@
 include("../model/db-config.php");
 
 class TbqClient {
+
     public static function verifierConnexion($mail, $password) {
         global $conn; // Pour accéder à la connexion dans db_config.php
         $query = "SELECT mot_de_passe FROM client WHERE mail = ?";
