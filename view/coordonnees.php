@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/coordonnees.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="" />
 </head>
 
 <body>
@@ -25,40 +26,35 @@
                         </li>
                         <li>
                             <span class="icon"><i class="fab fa-facebook"></i></span>
-                            <a href="https://www.facebook.com/gitefiguies"> gitefiguies </a>
+                            <a class="lienCoordonnees" href="https://www.facebook.com/gitefiguies"> gitefiguies </a>
                         </li>
                         <li>
                             <span class="icon"><i class="fas fa-envelope"></i></i></span>
-                            <a href="mailto:beatrice.boyer29@orange.fr">beatrice.boyer29@orange.fr</a>
+                            <a class="lienCoordonnees" href="mailto:beatrice.boyer29@orange.fr">beatrice.boyer29@orange.fr</a>
                         </li>
                     </ul>
-
-
                 </div>
 
-                <div class = "adresse">
+                <div class="adresse">
                     <h1>Adresse</h1>
+
                     <ul>
                         <li>Figuiès </li>
                         <li> 140 rue de Figuiès</li>
                         <li>12330 Salles-la-Source</li>
                     </ul>
 
-                </div>  
+                </div>
             </div>
-        
             <div class="carte">
-                <h1>Nous retrouver facilement</h1>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2848.228557347759!2d2.4907474767109212!3d44.44898440059934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b28229b9ad4bb3%3A0x53e8b9991335fc4d!2s140%20Figuies%2C%2012330%20Salles-la-Source!5e0!3m2!1sfr!2sfr!4v1696339440198!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h1 class="titreMap">Nous retrouver facilement</h1>
+                <div id="map"></div>
+                <script type="module" src="../js/carte.js"></script>
+                <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+
             </div>
-            
-
-
-
         </address>
-
     </main>
-
 
     <footer>
         <?php include '../includes/front-footer.php'; ?>

@@ -11,9 +11,41 @@ class TbqVisuel
 {
     private $db;
 
+    private $servername = "localhost";
+    private $username = "root";
+    private $password = "";
+    private $database = "giteAveyron";
+    
+
+
     public function __construct($db)
     {
-        $this->db = $db;
+       $conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
+       $this->db = $conn;
+    }
+
+    
+
+    public function insertDateCalendrier($nom, $dateDeb, $dateFin) {
+        // Préparation de la requête SQL pour l'insertion
+       $sql = "INSERT INTO disponibilites (nom, dateDeb, dateFin) VALUES (?, ?, ?)";
+       $stmt = $this->db->prepare($sql);
+
+        if (!$stmt) {
+            die("Erreur de préparation de la requête : " . $this->db->error);
+        }
+
+        // Liaison des valeurs aux paramètres de la requête
+        $stmt->bind_param("sss", $nom, $dateDeb, $dateFin);
+      
+
+        // Exécution de la requête d'insertion
+        if ($stmt->execute()) {
+            return true; // L'insertion a réussi
+        } else {
+            return false; // L'insertion a échoué
+        }
+
     }
 
     /**

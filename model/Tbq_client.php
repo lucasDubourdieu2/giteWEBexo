@@ -6,7 +6,6 @@
  * @date 04-10-2023
  */
 include("../model/db-config.php");
-
 class TbqClient
 {
     /**
