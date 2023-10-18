@@ -1,23 +1,25 @@
 <?php
 session_start();
 ?>
-
-<header>
-    <nav>
-        <ul class="menu">
-            <li class="logo"><a class="lienMenu" href="../view/index.php"><img src="../img/logo.png" alt="Logo Gite" style="width: 60px; height: auto;"></a></li>
-            <li class="item"><a class="lienMenu" href="../view/index.php">Accueil</a></li>
-            <li class="item"><a class="lienMenu" href="../view/disponibilites.php">Disponibilités</a></li>
-            <li class="item"><a class="lienMenu" href="../view/coordonnees.php">Coordonnées</a></li>
-
-            <?php
+<header class="header">
+  <nav>
+    <div class="logo">
+      <a href="../view/index.php"><img src="../img/logo.png" alt="Logo Gite" style="width: 60px; height: auto;"></a>
+    </div>
+    <input type="checkbox" id="menu-toggle">
+    <label for="menu-toggle" class="menu-icon">&#9776;</label>
+    <ul class="menu">
+      <li><a href="../view/index.php">Accueil</a></li>
+      <li><a href="../view/disponibilites.php">Disponibilités</a></li>
+      <li><a href="../view/coordonnees.php">Coordonnées</a></li>
+      <?php
             // Vérifiez l'état de la session
             if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
                 // Vérifiez le rôle de l'utilisateur
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             ?>
-                    <li class="item"><a href="../view/uploadCarousel.php">Panel Carousel</a></li>
-                    <li class="item"><a href="../view/gestionNewsletter.php">Gérer newsletter</a></li>
+                    <li class="item"><a class="lienMenu" href="../view/uploadCarousel.php">Panel Carousel</a></li>
+                    <li class="item"><a class="lienMenu" href="../view/gestionNewsletter.php">Gérer newsletter</a></li>
 
             <?php
                 }
@@ -30,8 +32,6 @@ session_start();
             <?php
             }
             ?>
-
-            <li class="toggle"><span class="bars"></span></li>
-        </ul>
-    </nav>
+    </ul>
+  </nav>
 </header>

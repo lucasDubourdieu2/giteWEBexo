@@ -39,12 +39,13 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
             </div>
         </div>
     </div>
+    <div class="gestionIntro">
     <div class="intro">
     <h1 class="titreIntro">Figuiès</h1>
     <p class="introTarif"><strong>A partir de 550€ par semaine.</strong></p>
     </div>
     <div class="text-container">
-        <p>
+        <p class="customText">
             Notre maison en pierre, située sur les hauteurs, entre vignes, falaises et le causse vous séduira par sa vue magnifique et son environnement agréable.
             <span class="hidden-text">
                 A 20 mn de Rodez, 10 mn de Marcillac et 30 mn de Conques, vous êtes idéalement situés pour visiter quelques-uns des sites naturels ou culturels remarquables de l'Aveyron.
@@ -59,45 +60,58 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
                 Pour des vacances authentiques et au grand air, dans un lieu paisible à l'écart de la circulation, vous vous sentirez chez vous tout en étant dépaysé.
             </span>
         </p>
-        <p><a href="#" id="readMoreLink" class="enSavoirPlus">En savoir plus</a></p>
+        <p class="customText"><a href="#" id="readMoreLink" class="enSavoirPlus">En savoir plus</a></p>
+    </div>
     </div>
     <div class="capacite">
         <hr>
-        <h2>Capacité</h2>
+        <div class="gestionCapacite">
+        <h2 class="customTitre">Capacité</h2>
         <li>Personne : 4</li>
         <li>Chambre : 2</li>
         <li>Personne (maximum) : 4</li>
+                </div>
     </div>
     <div class="equipement">
         <hr>
-        <h2>Equipements et services</h2>
+        <div class="gestionEquipement">
+        <h2 class="customTitre">Equipements et services</h2>
+        </div>
     </div>
     <div class="langues">
         <hr>
-        <h2>Langues</h2>
+        <div class="gestionLangue">
+        <h2 class="customTitre">Langues</h2>
         <img class="iconFlag" src="../img/france.png">
+        </div>
     </div>
     <div class="tarifs">
         <hr>
-        <h2>Tarifs</h2>
+        <div class="gestionTarifs">
+        <h2 class="customTitre">Tarifs</h2>
         <ul>
             <li><strong>Moyenne saison</strong> à 550€</li>
             <li><strong>Nuitée Moyenne saison</strong> à 85€</li>
             <li><strong>Semaine Haute Saison</strong> à 650€</li>
             <li><strong>Nuitée Haute Saison</strong> à 110€</li>
         </ul>
+        </div>
     </div>
     <div class="moyenPayement">
         <hr>
-        <h2>Moyen de payement</h2>
+        <div class="gestionPayement">
+        <h2 class="customTitre">Moyen de payement</h2>
         <li>Chèque</li>
         <li>Espèce</li>
         <li>Virement</li>
+        </div>
     </div>
     <div class="disponibilites">
         <hr>
-        <h2>Disponibilités</h2>
-        <p>Ouverture à partir du 01/04/2023 jusqu'au 30/10/2023</p>
+        <div class="gestionDispo">
+        <h2 class="customTitre">Saison</h2>
+        <p class="customText">Ouverture à partir du 01/04/2023 jusqu'au 30/10/2023</p>
+        </div>
     </div>
     <?php include '../includes/front-footer.php'; ?>
 </body>
