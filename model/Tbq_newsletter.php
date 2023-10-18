@@ -17,12 +17,12 @@ class TbqNewsletter
     }
 
     // Fonction pour insérer un nouvel abonné à la newsletter
-    public function insertSubscriber($nom, $email)
+    public function insererAbonner($nom, $email)
     {
-        $existingSubscriber = $this->checkSubscriberExistence($email);
+        $existingSubscriber = $this->verifExistenceAbonner($email);
 
         if ($existingSubscriber) {
-            header('Location: ../view/newsletter.php?errorEmailAlreadyUse');
+            header('Location: ../view/newsletter.php?errorEmailDejaUtiliser');
         } else {
             $sql = "INSERT INTO newsletter (nom, email) VALUES (?, ?)";
             $stmt = $this->db->prepare($sql);
@@ -42,7 +42,7 @@ class TbqNewsletter
     }
 
     // Fonction pour vérifier si l'e-mail existe déjà dans la base de données
-    private function checkSubscriberExistence($email)
+    private function verifExistenceAbonner($email)
     {
         $sql = "SELECT id FROM newsletter WHERE email = ?";
         $stmt = $this->db->prepare($sql);
@@ -60,4 +60,40 @@ class TbqNewsletter
             die("Erreur lors de l'exécution de la requête : " . $stmt->error);
         }
     }
+
+    // Fonction pour recuperer dans un fichier csv tout les mails de la table newsletter
+    public function telechargerAbonnesCSV() {
+        $sql = "SELECT nom, email FROM newsletter";
+        $result = $this->db->query($sql);
+    
+        if ($result) {
+            $abonnes = $result->fetch_all(MYSQLI_ASSOC);
+    
+            // Générer le fichier CSV
+            $csvFileName = 'abonnes_newsletter.csv';
+            $csvFile = fopen($csvFileName, 'w');
+    
+            if ($csvFile) {
+                // En-têtes du fichier CSV
+                fputcsv($csvFile, array('Nom', 'Email'));
+    
+                // Écrire les données de la table dans le fichier CSV
+                foreach ($abonnes as $abonne) {
+                    fputcsv($csvFile, $abonne);
+                }
+    
+                // Fermer le fichier CSV
+                fclose($csvFile);
+    
+                // Télécharger le fichier CSV
+                header('Content-Type: text/csv');
+                header('Content-Disposition: attachment; filename="' . $csvFileName . '"');
+                readfile($csvFileName);
+    
+                // Supprimer le fichier CSV temporaire
+                unlink($csvFileName);
+            }
+        }
+    }
+    
 }
