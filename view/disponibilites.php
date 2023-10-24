@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="../css/disponibilites.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
     <script type="module" src="../js/calendar.js"></script>
+    <script>
+</script>
+
 </head>
 
 <body>
@@ -23,6 +26,7 @@
                 // Vérifiez le rôle de l'utilisateur
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             ?>
+            
         <form action="../controller/calendrier.php" method="POST" id="eventForm">
             <label for="eventName">Nom de l'événement:</label>
             <input name="nom" type="text" id="eventName" required>
@@ -30,8 +34,10 @@
             <input name="dateDeb" type="date" id="eventStartDate" required>
             <label for="eventEndDate">Date de fin:</label>
             <input name="dateFin" type="date" id="eventEndDate" required>
-<!--            <button  type="submit" id="addEventBtn">Ajouter l'événement</button> -->
-            <button  type="submit" >Ajouter l'événement</button>
+            <div class="button-container">
+                <button type="submit" name="supprimer">Supprimer l'événement</button>
+                <button type="submit">Ajouter l'événement</button>
+            </div>
      </form>
 
      <?php
