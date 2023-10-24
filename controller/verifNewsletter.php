@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $tbqNewsletter = new TbqNewsletter($conn);
 
-    $result = $tbqNewsletter->insertSubscriber($nom, $email);
+    $result = $tbqNewsletter->insererAbonner($nom, $email);
 
     echo $result;
 }
