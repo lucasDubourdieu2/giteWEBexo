@@ -9,16 +9,22 @@
     <link rel="stylesheet" href="../css/disponibilites.css">
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar@6.1.9/index.global.min.js'></script>
     <script type="module" src="../js/calendar.js"></script>
-    <script>
-</script>
-
 </head>
 
 <body>
     <header>
         <?php include '../includes/front-header.php'; ?>
     </header>
+
     <main>
+        <?php if (!empty($_SESSION['erreurCalendrier'])) { ?>
+            <p class="msgErreur"><?php echo $_SESSION['erreurCalendrier']; ?></p>
+            <?php $_SESSION['erreurCalendrier'] = "" ?>
+        <?php } ?>
+        <?php if (!empty($_SESSION['validCalendrier'])) { ?>
+            <p class="msgValid"><?php echo $_SESSION['validCalendrier']; ?></p>
+            <?php $_SESSION['validCalendrier'] = "" ?>
+        <?php } ?>
         <div id='calendar'></div>
         <?php
             // Vérifiez l'état de la session
@@ -27,23 +33,23 @@
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             ?>
             
-        <form action="../controller/calendrier.php" method="POST" id="eventForm">
-            <label for="eventName">Nom de l'événement:</label>
-            <input name="nom" type="text" id="eventName" required>
-            <label for="eventStartDate">Date de début:</label>
-            <input name="dateDeb" type="date" id="eventStartDate" required>
-            <label for="eventEndDate">Date de fin:</label>
-            <input name="dateFin" type="date" id="eventEndDate" required>
-            <div class="button-container">
-                <button type="submit" name="supprimer">Supprimer l'événement</button>
-                <button type="submit">Ajouter l'événement</button>
-            </div>
-     </form>
+            <form action="../controller/calendrier.php" method="POST" id="eventForm">
+                <label for="eventName">Nom de l'événement:</label>
+                <input name="nom" type="text" id="eventName" required>
+                <label for="eventStartDate">Date de début:</label>
+                <input name="dateDeb" type="date" id="eventStartDate" required>
+                <label for="eventEndDate">Date de fin:</label>
+                <input name="dateFin" type="date" id="eventEndDate" required>
+                <div class="button-container">
+                    <button type="submit" name="supprimer">Supprimer l'événement</button>
+                    <button type="submit" name="ajouter">Ajouter l'événement</button>
+                </div>
+            </form>
 
-     <?php
+        <?php
                 }
             }
-     ?>
+        ?>
     </main>
 
     <footer>
