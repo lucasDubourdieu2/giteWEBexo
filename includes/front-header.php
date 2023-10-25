@@ -15,12 +15,11 @@ session_start();
       <?php
             // Vérifiez l'état de la session
             if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
-                // Vérifiez le rôle de l'utilisateur
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             ?>
                     <li class="item"><a class="lienMenu" href="../view/uploadCarousel.php">Panel Carousel</a></li>
+                    <li class="item"><a class="lienMenu" href="../view/formAccueil.php">Gérer la page d'accueil</a></li>
                     <li class="item"><a class="lienMenu" href="../view/gestionNewsletter.php">Gérer newsletter</a></li>
-
             <?php
                 }
             ?>

@@ -11,9 +11,7 @@
 </head>
 
 <body>
-    <header>
         <?php include '../includes/front-header.php'; ?>
-    </header>
     <main>
         <address class="coord">
             <div class="coor-container">
@@ -55,10 +53,6 @@
             </div>
         </address>
     </main>
-
-    <footer>
         <?php include '../includes/front-footer.php'; ?>
-    </footer>
 </body>
-
 </html>
