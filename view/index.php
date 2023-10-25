@@ -40,77 +40,56 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
         </div>
     </div>
     <div class="gestionIntro">
-    <div class="intro">
-    <h1 class="titreIntro">Figuiès</h1>
-    <p class="introTarif"><strong>A partir de 550€ par semaine.</strong></p>
-    </div>
-    <div class="text-container">
-        <p class="customText">
-            Notre maison en pierre, située sur les hauteurs, entre vignes, falaises et le causse vous séduira par sa vue magnifique et son environnement agréable.
-            <span class="hidden-text">
-                A 20 mn de Rodez, 10 mn de Marcillac et 30 mn de Conques, vous êtes idéalement situés pour visiter quelques-uns des sites naturels ou culturels remarquables de l'Aveyron.
-                Figuies est un hameau charmant, que l'on visite à pied. Une belle balade par un chemin, vous mènera de la cascade de la Roque, à celles de Salles-la source, en profitant de nombreux points de vue sur le paysage.
-                On adore aussi le sentier à flanc de versant avec des passages en encorbellement creusé dans la roche ! Il nous fait pénétrer dans le paysage des falaises calcaires avec de beaux points de vue sur la vallée.
-                Vous êtes sur le GR 62 de Rodez à Conques.
-                Le gîte de Figuies, d'une superficie de 75 m² sur deux niveaux, a été entièrement rénové en 2021. Une agréable décoration allie un style contemporain et des matériaux naturels comme le bois et le rotin.
-                Il se compose, au rez-de-chaussée d'une pièce lumineuse ouverte sur le paysage grâce à une grande baie vitrée. De 35 m² et climatisée, cet espace offre une cuisine moderne bien équipée, un séjour et un coin salon chaleureux et cosy.
-                La terrasse plein sud, offre une vue imprenable sur la vallée que l'on peut contempler en prenant ses repas. Vous pourrez même admirer de superbes couchers du soleil.
-                A l'étage, vous disposerez de deux chambres mansardées et confortables. L'une avec un lit en 140/190 et l'autre avec deux lits en 90/190. Vous y trouverez aussi la salle de bain avec son WC.
-                Le jardin, très agréable, est non clos. Pourvu d'un bar extérieur, d'un barbecue, d'un évier et de mobilier de jardin, vous pourrez y prendre vos repas ou vous reposer à l'ombre de la glycine. Un WC et une douche complètent l'équipement.
-                Pour des vacances authentiques et au grand air, dans un lieu paisible à l'écart de la circulation, vous vous sentirez chez vous tout en étant dépaysé.
-            </span>
-        </p>
-        <p class="customText"><a href="#" id="readMoreLink" class="enSavoirPlus">En savoir plus</a></p>
-    </div>
+        <div class="intro">
+            <h1 class="titreIntro">Figuiès</h1>
+            <p class="introTarif" id="modif_tarifAccroche"></p>
+        </div>
+        <div class="text-container">
+            <p class="customText" id="modif_introAccroche"></p>
+            <span class="hidden-text" id="modif_intro"></span>
+            <p class="customText"><a href="#" id="readMoreLink" class="enSavoirPlus">En savoir plus</a></p>
+        </div>
     </div>
     <div class="capacite">
         <hr>
         <div class="gestionCapacite">
-        <h2 class="customTitre">Capacité</h2>
-        <li>Personne : 4</li>
-        <li>Chambre : 2</li>
-        <li>Personne (maximum) : 4</li>
-                </div>
+            <h2 class="customTitre">Capacité</h2>
+            <p id="modif_capacite"></p>
+        </div>
     </div>
     <div class="equipement">
         <hr>
         <div class="gestionEquipement">
-        <h2 class="customTitre">Equipements et services</h2>
+            <h2 class="customTitre">Equipements et services</h2>
+            <p id="modif_equipementEtService"></p>
         </div>
     </div>
     <div class="langues">
         <hr>
         <div class="gestionLangue">
-        <h2 class="customTitre">Langues</h2>
-        <img class="iconFlag" src="../img/france.png">
+            <h2 class="customTitre">Langues</h2>
+            <p id="modif_langue"></p>
         </div>
     </div>
     <div class="tarifs">
         <hr>
         <div class="gestionTarifs">
-        <h2 class="customTitre">Tarifs</h2>
-        <ul>
-            <li><strong>Moyenne saison</strong> à 550€</li>
-            <li><strong>Nuitée Moyenne saison</strong> à 85€</li>
-            <li><strong>Semaine Haute Saison</strong> à 650€</li>
-            <li><strong>Nuitée Haute Saison</strong> à 110€</li>
-        </ul>
+            <h2 class="customTitre">Tarifs</h2>
+            <p id="modif_tarifs"></p>
         </div>
     </div>
     <div class="moyenPayement">
         <hr>
         <div class="gestionPayement">
-        <h2 class="customTitre">Moyen de payement</h2>
-        <li>Chèque</li>
-        <li>Espèce</li>
-        <li>Virement</li>
+            <h2 class="customTitre">Moyen de payement</h2>
+            <p id="modif_MoyenDePaiement"></p>
         </div>
     </div>
     <div class="disponibilites">
         <hr>
         <div class="gestionDispo">
-        <h2 class="customTitre">Saison</h2>
-        <p class="customText">Ouverture à partir du 01/04/2023 jusqu'au 30/10/2023</p>
+            <h2 class="customTitre">Saison</h2>
+            <p id="modif_saison"></p>
         </div>
     </div>
     <?php include '../includes/front-footer.php'; ?>
@@ -124,17 +103,55 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
         let isExpanded = false;
 
         readMoreLink.addEventListener("click", function(event) {
-            event.preventDefault(); // Empêcher le comportement par défaut du lien
+            event.preventDefault();
 
             if (!isExpanded) {
-                hiddenText.style.display = "block"; // Afficher le texte complet
+                hiddenText.style.display = "block";
                 readMoreLink.textContent = "Voir moins";
             } else {
-                hiddenText.style.display = "none"; // Cacher le texte excédentaire
+                hiddenText.style.display = "none";
                 readMoreLink.textContent = "En savoir plus";
             }
 
             isExpanded = !isExpanded;
         });
     });
+
+
+    document.addEventListener("DOMContentLoaded", function () {
+        var modif_tarifAccroche = document.getElementById("modif_tarifAccroche");
+        var modif_introAccroche = document.getElementById("modif_introAccroche");
+        var modif_intro = document.getElementById("modif_intro");
+        var modif_capacite = document.getElementById("modif_capacite");
+        var modif_equipementEtService = document.getElementById("modif_equipementEtService");
+        var modif_langue = document.getElementById("modif_langue");
+        var modif_tarifs = document.getElementById("modif_tarifs");
+        var modif_MoyenDePaiement = document.getElementById("modif_MoyenDePaiement");
+        var modif_saison = document.getElementById("modif_saison");
+
+        // Fonction pour effectuer la requête AJAX
+        function fetchData() {
+            var xhr = new XMLHttpRequest();
+            xhr.open("GET", "../controller/get_latest_accueil.php", true);
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    var data = JSON.parse(xhr.responseText);
+                    if (data) {
+                        modif_tarifAccroche.innerHTML = data.tarifAccroche;
+                        modif_introAccroche.innerHTML = data.introAccroche;
+                        modif_intro.innerHTML = data.intro;
+                        modif_capacite.innerHTML = data.capacite;
+                        modif_equipementEtService.innerHTML = data.equipementEtService;
+                        modif_langue.innerHTML = data.langue;
+                        modif_tarifs.innerHTML = data.tarifs;
+                        modif_MoyenDePaiement.innerHTML = data.moyenDePaiement;
+                        modif_saison.innerHTML = data.saison;
+                    }
+                }
+            };
+            xhr.send();
+        }
+        fetchData();
+    });
+
 </script>
