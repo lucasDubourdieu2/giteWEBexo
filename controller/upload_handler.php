@@ -1,6 +1,14 @@
 <?php
+session_start(); 
+
 include("../model/db-config.php");
 include("../model/Tbq_visuel.php");
+
+$_SESSION['imageOk'] = ""; 
+$_SESSION['erreurInsertion'] = ""; 
+$_SESSION['erreurTelechargement'] = ""; 
+$_SESSION['erreurExtension'] = ""; 
+$_SESSION['erreurPasImage'] = ""; 
 
 if (isset($_POST['upload'])) {
     // Vérifier si un fichier a été sélectionné
@@ -35,19 +43,28 @@ if (isset($_POST['upload'])) {
 
                     // Mettez à jour le nom de l'image dans la base de données
                     $tbqVisuel->updateImageName($image_id, $new_image_name);
-
+                    $_SESSION['imageOk'] = "L'image a bien été mise en ligne";
                     header('Location: ../view/uploadCarousel.php');
+                    exit;
                 } else {
-                    header('Location: ../view/uploadCarousel.php?errorInsertion');
+                    $_SESSION['erreurInsertion'] = "Une erreur lors de l'insertion de l'image est arrivée, veuillez recommencer";
+                    header('Location: ../view/uploadCarousel.php');
+                    exit;
                 }
             } else {
-                header('Location: ../view/uploadCarousel.php?errorDl');
+                $_SESSION['erreurTelechargement'] = "Une erreur lors du téléchargement de l'image est arrivée, veuillez recommencer";
+                header('Location: ../view/uploadCarousel.php');
+                exit;
             }
         } else {
-            header('Location: ../view/uploadCarousel.php?errorExtension');
+            $_SESSION['erreurExtension'] = "L'image n'utilise pas la bonne extension, veuillez utiliser un .jpg ou .png";
+            header('Location: ../view/uploadCarousel.php');
+            exit;
         }
     } else {
-        header('Location: ../view/uploadCarousel.php?errorNoImg');
+        $_SESSION['erreurExtension'] = "Une erreur est intervenu, veuillez recommencer";
+        header('Location: ../view/uploadCarousel.php');
+        exit;
     }
 }
 ?>
