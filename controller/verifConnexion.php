@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../view/index.php'); 
         exit;
     } else {
-        $_SESSION['erreurConnexion'] = "Nom d'utilisateur ou mot de passe incorrect.";
+        $_SESSION['erreurConnexion'] = "Nom d'utilisateur ou mot de passe incorrect";
     }
 }
 header('Location: ../view/connexion.php'); 
