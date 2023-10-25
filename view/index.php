@@ -42,12 +42,11 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
     <div class="gestionIntro">
         <div class="intro">
             <h1 class="titreIntro">Figuiès</h1>
-            <p class="introTarif"><strong>A partir de 550€ par semaine.</strong></p> <!-- Faire cela en ajax -->
+            <p class="introTarif" id="modif_tarifAccroche"></p>
         </div>
         <div class="text-container">
-            <p class="customText" id="modif_introAccroche">
-                <span class="hidden-text" id="modif_intro"></span>
-            </p>
+            <p class="customText" id="modif_introAccroche"></p>
+            <span class="hidden-text" id="modif_intro"></span>
             <p class="customText"><a href="#" id="readMoreLink" class="enSavoirPlus">En savoir plus</a></p>
         </div>
     </div>
@@ -120,6 +119,7 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
 
 
     document.addEventListener("DOMContentLoaded", function () {
+        var modif_tarifAccroche = document.getElementById("modif_tarifAccroche");
         var modif_introAccroche = document.getElementById("modif_introAccroche");
         var modif_intro = document.getElementById("modif_intro");
         var modif_capacite = document.getElementById("modif_capacite");
@@ -137,13 +137,14 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var data = JSON.parse(xhr.responseText);
                     if (data) {
+                        modif_tarifAccroche.innerHTML = data.tarifAccroche;
                         modif_introAccroche.innerHTML = data.introAccroche;
                         modif_intro.innerHTML = data.intro;
                         modif_capacite.innerHTML = data.capacite;
-                        modif_equipementEtService.innerHTML = data.equipement;
+                        modif_equipementEtService.innerHTML = data.equipementEtService;
                         modif_langue.innerHTML = data.langue;
                         modif_tarifs.innerHTML = data.tarifs;
-                        modif_MoyenDePaiement.innerHTML = data.paiement;
+                        modif_MoyenDePaiement.innerHTML = data.moyenDePaiement;
                         modif_saison.innerHTML = data.saison;
                     }
                 }

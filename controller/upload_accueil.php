@@ -3,6 +3,7 @@ include '../model/db-config.php';
 include '../model/Tbq_index.php';
 
 if (isset($_POST['miseAJour'])) {
+    $tarifAccroche = $_POST['modif_tarifAccroche'];
     $introAccroche = $_POST['modif_introAccroche'];
     $intro = $_POST['modif_intro'];
     $capacite = $_POST['modif_capacite'];
@@ -14,7 +15,7 @@ if (isset($_POST['miseAJour'])) {
 
     $tbqIndex = new TbqIndex();
 
-    $result = $tbqIndex->modifInfoAccueil($introAccroche, $intro, $capacite, $equipementEtService, $langue, $tarifs, $moyenDePaiement, $saison);
+    $result = $tbqIndex->modifInfoAccueil($tarifAccroche, $introAccroche, $intro, $capacite, $equipementEtService, $langue, $tarifs, $moyenDePaiement, $saison);
 
     if ($result) {
         echo "Mise à jour réussie";

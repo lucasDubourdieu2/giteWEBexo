@@ -11,6 +11,9 @@
     <form action="../controller/upload_accueil.php" method="POST" enctype="multipart/form-data">
         <h2>Mise en ligne des informations</h2>
         <br />
+        <label for="modif_tarifAccroche">Phrase accroche tarif :</label>
+        <input type="text" name="modif_tarifAccroche" id="modif_tarifAccroche">
+        <br />
         <label for="modif_introAccroche">Phrase accroche intro :</label>
         <input type="text" name="modif_introAccroche" id="modif_introAccroche">
         <br />
@@ -41,6 +44,7 @@
 </html>
 <script>
 document.addEventListener("DOMContentLoaded", function () {;
+        var modif_tarifAccroche = document.getElementById("modif_tarifAccroche");
         var modif_introAccroche = document.getElementById("modif_introAccroche");
         var modif_intro = document.getElementById("modif_intro");
         var modif_capacite = document.getElementById("modif_capacite");
@@ -58,13 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {;
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var data = JSON.parse(xhr.responseText);
                     if (data) {
+                        modif_tarifAccroche.value = data.tarifAccroche;
                         modif_introAccroche.value = data.introAccroche;
                         modif_intro.value = data.intro;
                         modif_capacite.value = data.capacite;
-                        modif_equipementEtService.value = data.equipement;
+                        modif_equipementEtService.value = data.equipementEtService;
                         modif_langue.value = data.langue;
                         modif_tarifs.value = data.tarifs;
-                        modif_MoyenDePaiement.value = data.paiement;
+                        modif_MoyenDePaiement.value = data.moyenDePaiement;
                         modif_saison.value = data.saison;
                     }
                 }

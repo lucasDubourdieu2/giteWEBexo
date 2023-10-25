@@ -24,11 +24,11 @@ class TbqIndex
         }
     }
 
-    public function modifInfoAccueil($introAccroche, $intro, $capacite, $equipementEtService, $langue, $tarifs, $moyenDePaiement, $saison){
+    public function modifInfoAccueil($tarifAccroche, $introAccroche, $intro, $capacite, $equipementEtService, $langue, $tarifs, $moyenDePaiement, $saison){
         global $conn;
-        $query = "UPDATE accueil SET introAccroche= ?, intro=?, capacite=?, equipementEtService=?, langue=?, tarifs=?, moyenDePaiement=?, saison=?";
+        $query = "UPDATE accueil SET tarifAccroche= ?, introAccroche= ?, intro=?, capacite=?, equipementEtService=?, langue=?, tarifs=?, moyenDePaiement=?, saison=?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("ssssssss", $introAccroche, $intro, $capacite, $equipementEtService, $langue, $tarifs, $moyenDePaiement, $saison);
+        $stmt->bind_param("sssssssss", $tarifAccroche, $introAccroche, $intro, $capacite, $equipementEtService, $langue, $tarifs, $moyenDePaiement, $saison);
     
         if ($stmt->execute()) {
             return true; // Mise à jour réussie, retourne vrai
