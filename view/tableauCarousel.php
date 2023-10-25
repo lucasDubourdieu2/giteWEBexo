@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/carousel.css">
+    <link rel="stylesheet" href="../css/front_header.css">
+    <link rel="stylesheet" href="../css/front_footer.css">
 </head>
 <body>
     <h1>Galerie d'images</h1>

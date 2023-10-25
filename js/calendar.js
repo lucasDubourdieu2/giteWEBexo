@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function() {
         initialView: 'dayGridMonth',
         locale: 'fr',
         events: '../controller/calendrierResa.php',
-        eventColor: 'grey'
+        eventColor: 'grey',
+        displayEventTime: false
     });
 
     calendar.render();
