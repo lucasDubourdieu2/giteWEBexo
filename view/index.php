@@ -23,7 +23,7 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
 <body>
     <?php include '../includes/front-header.php'; ?>
     <div class="gestionCarousel">
-        <h1 class="customTitle">Les images du gite :</h1>
+        <h1 class="customTitle">Le gite Figuiès</h1>
         <div class="carousel-container">
             <div class="carousel">
                 <?php foreach ($images as $index => $image) : ?>
@@ -50,48 +50,50 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
             <p class="customText"><a href="#" id="readMoreLink" class="enSavoirPlus">En savoir plus</a></p>
         </div>
     </div>
-    <div class="capacite">
-        <hr>
-        <div class="gestionCapacite">
-            <h2 class="customTitre">Capacité</h2>
-            <p id="modif_capacite"></p>
-        </div>
     </div>
-    <div class="equipement">
-        <hr>
-        <div class="gestionEquipement">
-            <h2 class="customTitre">Equipements et services</h2>
-            <p id="modif_equipementEtService"></p>
+        <div class="conteneurflex">
+            <div class="capacite">
+                <div class="gestionCapacite">
+                    <h2 class="customTitre">Capacité</h2>
+                    <p id="modif_capacite"></p>
+                </div>
+            </div>
+            <div class="equipement">
+                <div class="gestionEquipement">
+                    <h2 class="customTitre">Equipements et services</h2>
+                    <p id="modif_equipementEtService"></p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="langues">
-        <hr>
-        <div class="gestionLangue">
-            <h2 class="customTitre">Langues</h2>
-            <p id="modif_langue"></p>
+        <div class="conteneurflex">
+            <div class="langues">
+                <div class="gestionLangue">
+                    <h2 class="customTitre">Langues</h2>
+                    <p id="modif_langue"></p>
+                </div>
+            </div>
+            <div class="tarifs">
+                <div class="gestionTarifs">
+                    <h2 class="customTitre">Tarifs</h2>
+                    <p id="modif_tarifs"></p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="tarifs">
-        <hr>
-        <div class="gestionTarifs">
-            <h2 class="customTitre">Tarifs</h2>
-            <p id="modif_tarifs"></p>
+        <div class="conteneurflex">
+            <div class="moyenPayement">
+                <div class="gestionPayement">
+                    <h2 class="customTitre">Moyen de payement</h2>
+                    <p id="modif_MoyenDePaiement"></p>
+                </div>
+            </div>
+            <div class="disponibilites">
+                <div class="gestionDispo">
+                    <h2 class="customTitre">Saison</h2>
+                    <p id="modif_saison"></p>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="moyenPayement">
-        <hr>
-        <div class="gestionPayement">
-            <h2 class="customTitre">Moyen de payement</h2>
-            <p id="modif_MoyenDePaiement"></p>
-        </div>
-    </div>
-    <div class="disponibilites">
-        <hr>
-        <div class="gestionDispo">
-            <h2 class="customTitre">Saison</h2>
-            <p id="modif_saison"></p>
-        </div>
-    </div>
+    
     <?php include '../includes/front-footer.php'; ?>
 </body>
 
