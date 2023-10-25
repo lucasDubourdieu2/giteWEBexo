@@ -13,7 +13,6 @@
 <body>
     <header>
         <?php include '../includes/front-header.php'; ?>
-    </header>
     <main>
         <address class="coord">
             <div class="coor-container">

@@ -8,7 +8,7 @@ $tbqCalendrier = new tbqCalendrier($conn);
 $events = $tbqCalendrier->recupDateCalendrier();
 
 foreach ($events as &$event) {
-    $event['color'] = 'grey'; 
+    $event['color'] = 'gray'; 
 }
 
 header('Content-Type: application/json');

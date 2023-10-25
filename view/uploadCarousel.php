@@ -6,10 +6,8 @@
     <link rel="stylesheet" href="../css/carousel.css">
 </head>
 <body>
-    <header>
-            <?php include '../includes/front-header.php'; ?>
-    </header>
-    <h1>Page administrateur de la gestion d'images du carousel</h1>
+    <?php include '../includes/front-header.php'; ?>
+    <h1 class="titre2">Page administrateur de la gestion d'images du carousel</h1>
         <form action="../controller/upload_handler.php" method="POST" enctype="multipart/form-data">
             <h2>Mise en ligne d'une nouvelle image</h2>
         <label for="image">Sélectionnez une image :</label>
@@ -20,9 +18,9 @@
             <br>
             <input type="submit" name="upload" value="Télécharger">
         </form>
-        <?php include('../view/tableauCarousel.php');?>
-    <footer>
-        <?php include '../includes/front-footer.php'; ?>
-    </footer>
+        <div class="tableauImg">
+            <?php include('../view/tableauCarousel.php');?>
+        </div>
+    <?php include '../includes/front-footer.php'; ?>
 </body>
 </html>

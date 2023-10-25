@@ -1,4 +1,76 @@
-/* Style du formulaire */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.titre2 {
+    padding: 15px;
+    text-align: center;
+}
+.titre{
+    padding: 15px;
+
+    @media screen and (max-width: 646px) {
+        text-align: center;
+    }
+}
+
+
+/***********************************************************/
+/*      Tableau de gestion des images du carrousel         */
+/***********************************************************/
+.tableauflex {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #03989E;
+    color: #fff;
+
+}
+        
+table img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+.previewCarousel{
+    width: 150px;
+    height: auto;
+}
+
+.suppression {
+    color: #ffe2df;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 10%;
+    background-color: #e74c3c;
+}
+
+
+/***********************************************************/
+/*                  Style du formulaire                    */
+/***********************************************************/
+
 form {
     max-width: 400px;
     margin: auto auto;
@@ -9,14 +81,12 @@ form {
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-/* Style des étiquettes */
 label {
     font-weight: bold;
     display: block;
     margin-bottom: 10px;
 }
 
-/* Style des champs de saisie */
 input[type="file"],
 input[type="text"] {
     width: 90%;
@@ -26,7 +96,6 @@ input[type="text"] {
     border-radius: 5px;
 }
 
-/* Style du bouton de soumission */
 input[type="submit"] {
     background-color: #03989E;
     color: #fff;
@@ -40,47 +109,5 @@ input[type="submit"]:hover {
     background-color: #006d6d;
 }
 
-/* Style du tableau */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
-}
 
-/* Style des en-têtes de colonne */
-th {
-    background-color: #03989E;
-    color: #fff;
-    padding: 10px;
-    text-align: left;
-}
 
-/* Style des lignes du tableau */
-tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-/* Style des cellules du tableau */
-td {
-    padding: 10px;
-}
-
-/* Style du lien de suppression */
-.suppresion {
-    color: #e74c3c;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-a:hover {
-    text-decoration: underline;
-}
-
-.previewCarousel{
-    width: 150px;
-    height: auto;
-}
-
-h1{
-    text-align: center;
-}
