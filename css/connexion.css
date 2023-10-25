@@ -56,3 +56,14 @@ button {
 .lienInscription:hover {
     text-decoration: underline;
 }
+
+.msgErreur {
+    text-align: center;
+    margin: 10px;
+    color: #FCFCFC;
+    padding: 5px 5px;
+    background: #cc2929;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+}

@@ -2,7 +2,7 @@
 session_start(); 
 
 include '../model/Tbq_client.php';
-
+$_SESSION['erreurConnexion'] = ""; 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérez les données du formulaire
     $mail = trim($_POST['mail']);
@@ -16,7 +16,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../view/index.php'); 
         exit;
     } else {
-        echo "Nom d'utilisateur ou mot de passe incorrect.";
+        $_SESSION['erreurConnexion'] = "Nom d'utilisateur ou mot de passe incorrect.";
     }
 }
+header('Location: ../view/connexion.php'); 
+exit;
 ?>
