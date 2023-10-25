@@ -3,43 +3,71 @@
 <head>
     <meta charset="UTF-8">
     <title>Pannel admin accueil</title>
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/front_header.css">
+    <link rel="stylesheet" href="../css/front_footer.css">
+    <link rel="stylesheet" href="../css/formAccueil.css">
 </head>
 <body>
-<a href="../view/index.php">Accueil</a>
-<h1>Page administrateur de la modification des rubriques de la page d'accueil</h1>
-    <form action="../controller/upload_accueil.php" method="POST" enctype="multipart/form-data">
-        <h2>Mise en ligne des informations</h2>
-        <br />
-        <label for="modif_tarifAccroche">Phrase accroche tarif :</label>
-        <input type="text" name="modif_tarifAccroche" id="modif_tarifAccroche">
-        <br />
-        <label for="modif_introAccroche">Phrase accroche intro :</label>
-        <input type="text" name="modif_introAccroche" id="modif_introAccroche">
-        <br />
-        <label for="modif_intro">texte intro :</label>
-        <input type="text" name="modif_intro" id="modif_intro">
-        <br />
-        <label for="modif_capacite">Capacité :</label>
-        <input type="text" name="modif_capacite" id="modif_capacite">
-        <br />
-        <label for="modif_equipementEtService">Equipements et services :</label>
-        <input type="text" name="modif_equipementEtService" id="modif_equipementEtService">
-        <br />
-        <label for="modif_langue">Langue :</label>
-        <input type="text" name="modif_langue" id="modif_langue">
-        <br />
-        <label for="modif_tarifs">Tarifs :</label>
-        <input type="text" name="modif_tarifs" id="modif_tarifs">
-        <br />
-        <label for="modif_MoyenDePaiement">Moyen de paiement :</label>
-        <input type="text" name="modif_MoyenDePaiement" id="modif_MoyenDePaiement">
-        <br />
-        <label for="modif_saison">Saison :</label>
-        <input type="text" name="modif_saison" id="modif_saison">
-        <br />
-        <input type="submit" name="miseAJour" value="Mettre à jour">
-    </form>
+<?php include '../includes/front-header.php'; ?>
+<h1 class="titre">Modifier les informations de la page d'accueil du gite Figuiès</h1>
+<form action="../controller/upload_accueil.php" method="POST" enctype="multipart/form-data">
+    <div class="conteneurflex">
+        <div class="boite">
+            <label for="modif_tarifAccroche">Phrase accroche tarif :</label>
+            <br>
+            <textarea class="zonetexte" name="modif_tarifAccroche" id="modif_tarifAccroche"></textarea>
+        </div>
+        <div class="boite">
+            <label for="modif_introAccroche">Phrase accroche intro :</label>
+            <br>
+            <textarea class="zonetexte" name="modif_introAccroche" id="modif_introAccroche"></textarea>
+        </div>
+    </div>
+    
+    <div class="conteneurflex">
+        <div class="boite">
+            <label for="modif_intro">texte intro :</label>
+            <textarea class="zonetexte" name="modif_intro" id="modif_intro"></textarea>
+        </div>
+    </div>
+    <div class="conteneurflex">
+        <div class="boite">
+            <label for="modif_capacite">Capacité :</label>
+            <textarea class="zonetexte" name="modif_capacite" id="modif_capacite"></textarea>
+        </div>
+        <div class="boite">
+            <label for="modif_equipementEtService">Equipements et services :</label>
+            <textarea class="zonetexte" name="modif_equipementEtService" id="modif_equipementEtService"></textarea>
+        </div>
+    </div>
+   
+    <div class "conteneurflex">
+        <div class="boite">
+            <label for="modif_langue">Langue :</label>
+            <textarea class="zonetexte" name="modif_langue" id="modif_langue"></textarea>
+        </div>
+        <div class="boite">
+            <label for="modif_tarifs">Tarifs :</label>
+            <textarea class="zonetexte" name="modif_tarifs" id="modif_tarifs"></textarea>
+        </div>
+        <div class="boite">
+            <label for="modif_MoyenDePaiement">Moyen de paiement :</label>
+            <textarea class="zonetexte" name="modif_MoyenDePaiement" id="modif_MoyenDePaiement"></textarea>
+        </div>
+    </div>
+   
+    <div class="conteneurflex">
+        <div class="boite">
+            <label for="modif_saison">Saison :</label>
+            <textarea class="zonetexte" name="modif_saison" id="modif_saison"></textarea>
+        </div>
+    </div>
+    <div class="conteneurflex">
+        <input class="ValidationDonnee" type="submit" name="miseAJour" value="Mettre à jour">
+    </div>
+</form>
+
+    <?php include '../includes/front-footer.php'; ?>
 </body>
 </html>
 <script>

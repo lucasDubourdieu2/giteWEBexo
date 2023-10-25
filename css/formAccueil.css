@@ -1,0 +1,56 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.titre {
+    text-align: center;
+    padding: 15px;
+}
+
+.conteneurflex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+
+.boite {
+    
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    background: #FFFAFA;
+    border-radius: 5px;
+    margin: 5px;
+    width: 100%;    
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
+    
+}
+
+.zonetexte {
+    width: 100%;
+    min-height: 100px; /* Hauteur minimale (ajustez selon vos besoins) */
+    resize: vertical; /* Permet la redimension verticale de la zone de texte */
+}
+
+.ValidationDonnee {
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    background: #FFFAFA;
+    border-radius: 5px;
+    margin: 5px;
+    width: 100%;    
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
+}
+
+@media screen and (max-width: 646px) {
+    .conteneurflex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}

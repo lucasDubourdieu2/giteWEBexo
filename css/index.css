@@ -5,20 +5,163 @@ body {
     background-color: #f2f2f2;
 }
 
+.conteneurflex {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.gestionIntro
+ {
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    background: #FCFCFC;
+    border-radius: 5px;
+    margin:5px;
+    margin-top: 15px;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
+}
+
+.capacite,
+.equipement,
+.langues,
+.tarifs,
+.moyenPayement,
+.disponibilites
+{
+    margin-bottom: 15px;
+    padding: 10px 40px;
+    background: #FFFAFA;
+    border-radius: 5px;
+    margin: 5px;
+    width: 95%;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
+}
+
+.titreIntro {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.introTarif {
+    color: red;
+    text-align: center;
+}
+
+.text-container {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.text-container .hidden-text {
+    display: none;
+}
+
+.hidden-text {
+    font-size: 16px;
+    color: #000000;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.enSavoirPlus {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+li {
+    font-size: 16px;
+    color: #666;
+    list-style: none;
+    text-align: center;
+}
+
+
+
+.customTitre {
+    font-size: 24px;
+    color: #333;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+
+.iconFlag {
+    max-width: 60px;
+    min-width: 30px;
+    vertical-align: middle;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+@media (max-width: 768px) {
+    .titreIntro {
+        font-size: 24px;
+    }
+
+    .customTitre {
+        font-size: 20px;
+    }
+
+    .customText {
+        font-size: 14px;
+    }
+
+    ul li {
+        font-size: 14px;
+    }
+}
+
+
+@media screen and (max-width: 646px) {
+    .conteneurflex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+
+/************************************/
+/*             CARROUSEL            */
+/************************************/
 .gestionCarousel {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin: 20px;
-    background-color: #222;
-    border-radius: 20px;
+    background-color: #FFFAFA;
+    border-radius: 5px;
+    margin: 5px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 
 .customTitle,
-#imageCounter {
-    color: #f2f2f2;
+#imageCounter { 
+    color: #080808;
 }
 
 .carousel-container {
@@ -26,8 +169,9 @@ body {
     width: 80%;
     margin: 0 auto;
 }
-
+    
 .carousel {
+    margin: 15px;
     display: flex;
     overflow: hidden;
 }
@@ -65,155 +209,5 @@ body {
 
 #nextCarouselBtn:hover,
 #prevCarouselBtn:hover {
-    background-color: #006d6d;
-}
-
-.active {
-    transform: translateX(0);
-}
-
-.gestionIntro,
-.gestionCapacite,
-.gestionEquipement,
-.gestionLangue,
-.gestionTarifs,
-.gestionPayement,
-.gestionDispo {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 20px;
-    border-radius: 20px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-@media (max-width: 949px) {
-    .intro,
-    .capacite,
-    .equipement,
-    .langues,
-    .tarifs,
-    .moyenPayement,
-    .disponibilites {
-        display: flex;
-        flex-direction: column;
-    }
-}
-
-/* Desktop */
-@media (min-width: 950px) {
-    .capacite,
-    .equipement,
-    .langues,
-    .tarifs,
-    .moyenPayement,
-    .disponibilites {
-        display: flex;
-        flex-direction: row;
-    }
-}
-
-/* Titre principal */
-.titreIntro {
-    font-size: 28px;
-    margin-bottom: 10px;
-    color: #333;
-    text-align: center;
-}
-
-.introTarif {
-    color: red;
-    text-align: center;
-}
-
-/* Paragraphe principal */
-.text-container {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.text-container .hidden-text {
-    display: none;
-}
-
-.hidden-text {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.enSavoirPlus {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-/* Listes */
-li {
-    font-size: 16px;
-    color: #666;
-    list-style: none;
-    text-align: center;
-}
-
-/* Lignes horizontales */
-hr {
-    border: 1px solid #ccc;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-/* En-tête de section */
-.customTitre {
-    font-size: 24px;
-    color: #333;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    text-align: center;
-}
-
-/* Tarifs */
-ul {
-    list-style: none;
-    padding: 0;
-    text-align: center;
-}
-
-ul li {
-    font-size: 16px;
-    color: #666;
-    margin-bottom: 10px;
-}
-
-/* Langues */
-.iconFlag {
-    max-width: 60px;
-    min-width: 30px;
-    vertical-align: middle;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-    .titreIntro {
-        font-size: 24px;
-    }
-
-    .customTitre {
-        font-size: 20px;
-    }
-
-    .customText {
-        font-size: 14px;
-    }
-
-    ul li {
-        font-size: 14px;
-    }
+    background-color: #03989E;
 }
