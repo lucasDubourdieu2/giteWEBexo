@@ -1,3 +1,10 @@
+<?php
+session_start();
+if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+    header('Location: ../view/index.php');
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>

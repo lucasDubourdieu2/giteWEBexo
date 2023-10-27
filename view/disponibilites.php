@@ -22,9 +22,7 @@
     <?php } ?>
     <div id='calendar'></div>
     <?php
-    // Vérifiez l'état de la session
     if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
-        // Vérifiez le rôle de l'utilisateur
         if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
     ?>
             <form action="../controller/calendrier.php" method="POST" id="eventForm">
