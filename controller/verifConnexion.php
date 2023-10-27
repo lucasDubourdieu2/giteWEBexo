@@ -10,15 +10,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 
     if (TbqClient::verifierConnexion($mail, $password)) {
-        // La vérification de connexion est réussie
-        $_SESSION['utilisateur_connecte'] = true; 
-        $_SESSION['role'] = 'admin';
-        header('Location: ../view/index.php'); 
-        exit;
+        $role = TbqClient::getRoleByEmail($mail);
+        if ($role === 'admin') {
+            $_SESSION['utilisateur_connecte'] = true; 
+            $_SESSION['role'] = 'admin';
+            header('Location: ../view/index.php'); 
+            exit;
+        }else{
+            $_SESSION['utilisateur_connecte'] = true; 
+            header('Location: ../view/index.php'); 
+            exit;
+        }
     } else {
         $_SESSION['erreurConnexion'] = "Nom d'utilisateur ou mot de passe incorrect";
     }
 }
 header('Location: ../view/connexion.php'); 
 exit;
-?>
