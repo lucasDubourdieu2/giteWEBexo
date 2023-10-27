@@ -16,7 +16,7 @@ body {
  {
     margin-bottom: 15px;
     padding: 10px 40px;
-    background: #FCFCFC;
+    background: #FFFAFA;
     border-radius: 5px;
     margin:5px;
     margin-top: 15px;
@@ -36,6 +36,7 @@ body {
     border-radius: 5px;
     margin: 5px;
     width: 95%;
+    word-wrap: break-word;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
 }
 
@@ -105,16 +106,6 @@ ul li {
     color: #666;
     margin-bottom: 10px;
 }
-
-
-.iconFlag {
-    max-width: 60px;
-    min-width: 30px;
-    vertical-align: middle;
-    margin-right: auto;
-    margin-left: auto;
-}
-
 
 @media (max-width: 768px) {
     .titreIntro {
@@ -219,4 +210,16 @@ ul li {
         height: 200px;
         border-radius: 5px;
     }
+
+    .carousel-text {
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        margin-top: 10px;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    
 }
+
+
