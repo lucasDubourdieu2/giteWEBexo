@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header('Location: ../view/index.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,7 +8,11 @@ if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte
     <link rel="stylesheet" href="../css/formAccueil.css">
 </head>
 <body>
-<?php include '../includes/front-header.php'; ?>
+<?php include '../includes/front-header.php'; 
+    if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+        header('Location: ../view/index.php');
+        exit;
+    }?>
 <h1 class="titre">Modifier les informations de la page d'accueil du gite Figuiès</h1>
 <form action="../controller/upload_accueil.php" method="POST" enctype="multipart/form-data">
     <div class="conteneurflex">
@@ -48,7 +45,7 @@ if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte
         </div>
     </div>
    
-    <div class "conteneurflex">
+    <div class="conteneurflex">
         <div class="boite">
             <label for="modif_langue">Langue :</label>
             <textarea class="zonetexte" name="modif_langue" id="modif_langue"></textarea>
