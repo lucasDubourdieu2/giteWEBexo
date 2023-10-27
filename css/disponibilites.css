@@ -1,14 +1,23 @@
+body {
+    background-color: #F1EED9;
+}
+
+.corpsPage {
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
 #calendar {
-    margin: 15px;
+    margin: 20px;
     padding: 5px 5px;
-    background: #FCFCFC;
+    background: #F7EDBF;
     border-radius: 5px;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
     position: sticky;
 }
 
 #eventForm {
-    background-color: #f5f5f5;
+    background-color: #F7EDBF;
     border: 1px solid #ccc;
     padding: 20px;
     border-radius: 5px;
@@ -31,14 +40,25 @@
     border-radius: 5px;
 }
 
-#eventForm button {
-    background-color: #3498db;
+.bouttonValider {
+    background-color: #31B275;
     color: #fff;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
+
+.bouttonSupprimer {
+    background-color: #B6473C;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
 
 #eventForm button:hover {
     background-color: #2980b9;
@@ -70,6 +90,14 @@
 
     .button-container button {
         margin-top: 0; 
+    }
+}
+
+@media screen and (max-width: 646px) {
+    .corpsPage {
+        margin-right: 30px;
+        margin-left: 30px;
+    
     }
 }
 

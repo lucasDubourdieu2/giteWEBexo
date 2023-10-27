@@ -2,7 +2,13 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color: #f2f2f2;
+    background-color: #F1EED9;
+}
+
+.corpsPage {
+    margin-right: 100px;
+    margin-left: 100px;
+
 }
 
 .conteneurflex {
@@ -14,31 +20,43 @@ body {
 
 .gestionIntro
  {
+    
     margin-bottom: 15px;
     padding: 10px 40px;
-    background: #FFFAFA;
+    background: #F7EDBF;
     border-radius: 5px;
     margin:5px;
     margin-top: 15px;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
 }
 
-.capacite,
 .equipement,
-.langues,
 .tarifs,
-.moyenPayement,
 .disponibilites
 {
-    margin-bottom: 15px;
+    margin-top: 15px;
     padding: 10px 40px;
-    background: #FFFAFA;
+    background: #F7EDBF;
     border-radius: 5px;
     margin: 5px;
     width: 95%;
     word-wrap: break-word;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
 }
+.capacite,
+.langues,
+.moyenPayement {
+    margin-left: 100px;
+    margin-top: 15px;
+    padding: 10px 40px;
+    background: #F7EDBF;
+    border-radius: 5px;
+    margin: 5px;
+    width: 95%;
+    word-wrap: break-word;
+    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);  
+}
+
 
 .titreIntro {
     font-size: 28px;
@@ -133,6 +151,12 @@ ul li {
         align-items: center;
         text-align: center;
     }
+
+    .corpsPage {
+        margin-right: 30px;
+        margin-left: 30px;
+    
+    }
 }
 
 
@@ -140,13 +164,13 @@ ul li {
 /*             CARROUSEL            */
 /************************************/
 .gestionCarousel {
+    margin-top: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: #FFFAFA;
+    background-color: #F7EDBF;
     border-radius: 5px;
-    margin: 5px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
 

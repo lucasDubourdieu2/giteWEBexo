@@ -5,7 +5,7 @@ session_start();
 <header class="header">
   <nav>
     <div class="logo">
-      <a href="../view/index.php"><img src="../img/logo.png" alt="Logo Gite" style="width: 60px; height: auto;"></a>
+      <a href="../view/index.php"><img src="../img/logo.png" alt="Logo Gite" ></a>
     </div>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>

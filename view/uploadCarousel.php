@@ -11,7 +11,8 @@
         header('Location: ../view/index.php');
         exit;
     }?>
-    <h1 class="titre2">Page administrateur de la gestion d'images du carousel</h1>
+    <div class="corpsPage">
+        <h1 class="titre2">Page administrateur de la gestion d'images du carousel</h1>
         <form action="../controller/upload_handler.php" method="POST" enctype="multipart/form-data">
             <h2>Mise en ligne d'une nouvelle image</h2>
         <label for="image">Sélectionnez une image :</label>
@@ -42,6 +43,7 @@
         <div class="tableauImg">
             <?php include('../view/tableauCarousel.php');?>
         </div>
+    </div>
     <?php include '../includes/front-footer.php'; ?>
 </body>
 </html>

@@ -1,3 +1,13 @@
+body {
+    background-color: #F1EED9;
+}
+
+.corpsPage {
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+
 .coord {
     text-align: center;
     display: flex;
@@ -8,18 +18,17 @@
 }
 
 .carte {
-    width: 96%;
+    width: 100%;
     margin: 15px;
     padding: 10px 40px;
-    background: #FCFCFC;
     border-radius: 5px; 
+    background-color: #F7EDBF;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
     position: sticky;
 }
 
 .lienCoordonnees {
-    text-decoration: none;
-    color: black;
+    text-decoration: underline;
 }
 ul {
     list-style: none;
@@ -35,15 +44,15 @@ ul {
 .coordonnees {
     margin-bottom: 15px;
     padding: 10px 40px;
-    background: #FCFCFC;
     border-radius: 5px;
     width: 95%;
+    background-color: #F7EDBF;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
 }
 .adresse {
     margin-bottom: 15px;
     padding: 10px 40px;
-    background: #FCFCFC;
+    background-color: #F7EDBF;
     border-radius: 5px;
     width: 95%;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);    
@@ -55,14 +64,21 @@ ul {
 
 
 
-@media screen and (max-width: 646px) {
+@media screen and (max-width: 815px) {
     .coordonnees {
-        width: 110%;
+        width: 100%;
     }
 
     .adresse {
-        width: 110%;   
+        width: 100%;   
     }
+  
+    .corpsPage {
+        margin-right: 30px;
+        margin-left: 30px;
+        
+    }
+
 }
 
 @media screen and (min-width: 647px) {
@@ -71,20 +87,9 @@ ul {
         flex-direction: row;
         width: 100%;
     }
-    
-    .coordonnees,
-    .adresse {
-        flex: 1;
-        width: 100%;
-    }
 
-    .coordonnees {
+    .adresse {
         margin-left: 15px;
-        margin-right: 15px;
-    }
-
-    .adresse {
-        margin-right: 15px;
     }
 }
 

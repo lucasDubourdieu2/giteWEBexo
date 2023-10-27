@@ -12,7 +12,7 @@
     top: 0;
     width: 100%;
     box-shadow: 0 4px 20px hsla(207, 24%, 35%, 0.1);
-    background-color: #151418;
+    background-color: #2E221F;
     z-index: 1;
   }
   
@@ -22,16 +22,21 @@
     align-items: center;
     padding: 20px 30px;
   }
-  
+
   .logo a {
     font-size: 24px;
     font-weight: bold;
     color: #fff;
   }
-  
+  .logo a img {
+    width: 80px; /* Ajustez la largeur de l'image selon vos préférences */
+    height: auto; /* Pour maintenir les proportions de l'image */
+}
+
   .logo a span {
     color: #8739fa;
   }
+
   
   .menu {
     display: flex;
@@ -73,7 +78,7 @@
     .menu {
       margin-top: 35px;
       flex-direction: column;
-      background-color: #151418;
+      background-color: #2E221F;
       align-items: start;
       position: absolute;
       top: 70px;

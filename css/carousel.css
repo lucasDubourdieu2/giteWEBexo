@@ -3,6 +3,13 @@ body {
     flex-direction: column;
     min-height: 100vh;
     margin: 0;
+    background-color: #F1EED9;
+}
+
+.corpsPage {
+    margin-right: 100px;
+    margin-left: 100px;
+
 }
 
 .titre2 {
@@ -16,8 +23,13 @@ body {
         text-align: center;
     }
 }
+@media screen and (max-width: 646px) {
+    .corpsPage {
+        margin-right: 30px;
+        margin-left: 30px;
 
-
+    }
+}
 /***********************************************************/
 /*      Tableau de gestion des images du carrousel         */
 /***********************************************************/
@@ -40,8 +52,8 @@ table th, table td {
 }
 
 th {
-    background-color: #03989E;
-    color: #fff;
+    background-color: #F7EDBF;
+    color: black;
 
 }
         
@@ -76,7 +88,7 @@ form {
     margin: auto auto;
     padding: 20px;
     border: 1px solid #ccc;
-    background-color: #f9f9f9;
+    background-color: #F7EDBF;
     text-align: center;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
 }
@@ -97,7 +109,7 @@ input[type="text"] {
 }
 
 input[type="submit"] {
-    background-color: #03989E;
+    background-color: #31B275;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -106,7 +118,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #006d6d;
+    background-color: #2980b9;
 }
 
 .msgErreur {
