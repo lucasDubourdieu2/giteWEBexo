@@ -1,4 +1,5 @@
 <?php
+session_set_cookie_params(1200);
 session_start();
 ?>
 <header class="header">

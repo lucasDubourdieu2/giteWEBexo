@@ -1,5 +1,5 @@
 <?php
-
+session_set_cookie_params(1200);
 session_start(); 
 
 include '../model/tbq_calendrier.php';

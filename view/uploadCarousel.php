@@ -1,10 +1,3 @@
-<?php
-session_start();
-if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-    header('Location: ../view/index.php');
-    exit;
-}
-?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +6,11 @@ if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte
     <link rel="stylesheet" href="../css/carousel.css">
 </head>
 <body>
-    <?php include '../includes/front-header.php'; ?>
+    <?php include '../includes/front-header.php'; 
+    if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
+        header('Location: ../view/index.php');
+        exit;
+    }?>
     <h1 class="titre2">Page administrateur de la gestion d'images du carousel</h1>
         <form action="../controller/upload_handler.php" method="POST" enctype="multipart/form-data">
             <h2>Mise en ligne d'une nouvelle image</h2>
