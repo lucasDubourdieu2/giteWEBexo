@@ -11,6 +11,16 @@ body {
 
 }
 
+#modif_intro,
+#modif_equipementEtService,
+#modif_langue,
+#modif_tarifs,
+#modif_MoyenDePaiement,
+#modif_saison {
+    white-space: pre-line;
+}
+
+
 .conteneurflex {
     display: flex;
     flex-direction: row;
@@ -20,13 +30,11 @@ body {
 
 .gestionIntro
  {
-    
+    margin-top: 15px;
     margin-bottom: 15px;
     padding: 10px 40px;
     background: #F7EDBF;
     border-radius: 5px;
-    margin:5px;
-    margin-top: 15px;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);   
 }
 
@@ -159,6 +167,13 @@ ul li {
     }
 }
 
+@media screen and (min-width: 647px) {
+    .conteneurflex {
+        display: flex;
+        align-items: stretch;
+    }
+}
+
 
 /************************************/
 /*             CARROUSEL            */
@@ -245,5 +260,8 @@ ul li {
     }
     
 }
+
+
+
 
 
