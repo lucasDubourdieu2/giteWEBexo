@@ -1,15 +1,15 @@
 <?php
 session_set_cookie_params(1200);
-session_start(); 
+session_start();
 
 include("../model/db-config.php");
 include("../model/Tbq_visuel.php");
 
-$_SESSION['imageOk'] = ""; 
-$_SESSION['erreurInsertion'] = ""; 
-$_SESSION['erreurTelechargement'] = ""; 
-$_SESSION['erreurExtension'] = ""; 
-$_SESSION['erreurPasImage'] = ""; 
+$_SESSION['imageOk'] = "";
+$_SESSION['erreurInsertion'] = "";
+$_SESSION['erreurTelechargement'] = "";
+$_SESSION['erreurExtension'] = "";
+$_SESSION['erreurPasImage'] = "";
 
 if (isset($_POST['upload'])) {
     // Vérifier si un fichier a été sélectionné
@@ -26,24 +26,30 @@ if (isset($_POST['upload'])) {
 
         // Vérifiez si l'extension est autorisée
         if (in_array(strtolower($file_extension), $allowed_extensions)) {
-            // L'extension est valide, déplacez l'image téléchargée dans le répertoire "img"
-            $upload_directory = "../img/"; // Chemin du répertoire "img"
+            // Chemin du répertoire "img"
+            $upload_directory = "../img/";
 
             // Créez une instance de TbqVisuel avec la connexion à la base de données
             $tbqVisuel = new TbqVisuel($conn);
 
-            if (move_uploaded_file($image_tmp, $upload_directory . $image_name)) {
-                // L'upload a réussi, ajoutez le lien de l'image en base de données
-                if ($tbqVisuel->insertImage($upload_directory . $image_name, $image_alt)) {
-                    // Récupérez l'ID de l'image après l'insertion
-                    $image_id = $tbqVisuel->getLastInsertedId();
+            if (move_uploaded_file($image_tmp, $upload_directory . 'original/' . $image_name)) {
+                // L'upload a réussi, renommez l'image avec l'ID
+                $image_id = $tbqVisuel->insertImage($upload_directory . 'original/' . $image_name, $image_alt);
 
-                    // Renommez l'image avec l'ID
-                    $new_image_name = "../img/carousel/figure-" . $image_id . "." . $file_extension;
-                    rename($upload_directory . $image_name, $upload_directory . $new_image_name);
+                if ($image_id) {
+                    // Renommez l'image en fonction de l'ID
+                    $desktop_image_name = "figures-" . $image_id . "-desktop." . $file_extension;
+                    $mobile_image_name = "figures-" . $image_id . "-mobile." . $file_extension;
 
-                    // Mettez à jour le nom de l'image dans la base de données
-                    $tbqVisuel->updateImageName($image_id, $new_image_name);
+                    // Redimensionnez l'image en version desktop (400x400)
+                    resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/desktop/' . $desktop_image_name, 400, 400);
+
+                    // Redimensionnez l'image en version mobile (200x200)
+                    resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/mobile/' . $mobile_image_name, 200, 200);
+
+                    // Mettre à jour le nom de l'image dans la base de données
+                    $tbqVisuel->updateImageName($image_id, $desktop_image_name, $mobile_image_name);
+
                     $_SESSION['imageOk'] = "L'image a bien été mise en ligne";
                     header('Location: ../view/uploadCarousel.php');
                     exit;
@@ -63,9 +69,28 @@ if (isset($_POST['upload'])) {
             exit;
         }
     } else {
-        $_SESSION['erreurExtension'] = "Une erreur est intervenu, veuillez recommencer";
+        $_SESSION['erreurPasImage'] = "Une erreur est intervenu, veuillez recommencer";
         header('Location: ../view/uploadCarousel.php');
         exit;
     }
 }
-?>
+
+// Fonction pour redimensionner l'image
+function resizeImage($sourcePath, $destinationPath, $width, $height) {
+    list($origWidth, $origHeight) = getimagesize($sourcePath);
+    $source = imagecreatefromstring(file_get_contents($sourcePath));
+    $image = imagecreatetruecolor($width, $height);
+
+    imagecopyresampled($image, $source, 0, 0, 0, 0, $width, $height, $origWidth, $origHeight);
+
+    // Enregistrez l'image redimensionnée au format JPEG ou PNG en fonction de l'extension d'origine
+    $fileExtension = strtolower(pathinfo($sourcePath, PATHINFO_EXTENSION));
+    if ($fileExtension === 'jpg' || $fileExtension === 'jpeg') {
+        imagejpeg($image, $destinationPath);
+    } elseif ($fileExtension === 'png') {
+        imagepng($image, $destinationPath);
+    }
+
+    imagedestroy($source);
+    imagedestroy($image);
+}
