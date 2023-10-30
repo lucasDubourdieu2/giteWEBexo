@@ -89,10 +89,8 @@ function resizeImage($sourcePath, $destinationPath, $width, $height, $compressio
     $fileExtension = strtolower(pathinfo($sourcePath, PATHINFO_EXTENSION));
     if ($fileExtension === 'jpg' || $fileExtension === 'jpeg') {
         imagejpeg($image, $destinationPath, $compressionQuality);
-        echo 'Compression JPEG effectuée avec une qualité de ' . $compressionQuality;
     } elseif ($fileExtension === 'png') {
         imagepng($image, $destinationPath);
-        echo 'Compression PNG effectuée';
     }
     imagedestroy($source);
     imagedestroy($image);
