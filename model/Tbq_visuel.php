@@ -15,13 +15,13 @@ class TbqVisuel
     private $username = "root";
     private $password = "";
     private $database = "giteAveyron";
-    
+
 
 
     public function __construct($db)
     {
-       $conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
-       $this->db = $conn;
+        $conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
+        $this->db = $conn;
     }
 
 
@@ -121,6 +121,80 @@ class TbqVisuel
     }
 
     /**
+     * Récupère les images desktop depuis la base de données.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 30-10-2023
+     * @param string $columns Les colonnes à récupérer (par défaut, toutes les colonnes).
+     *
+     * @return array Un tableau contenant les images récupérées.
+     */
+    public function getImagesDesktopFromDatabase($columns = "*")
+    {
+        $sql = "SELECT $columns FROM images WHERE is_desktop = 1";
+        $stmt = $this->db->prepare($sql);
+
+        if (!$stmt) {
+            die("Erreur de préparation de la requête : " . $this->db->error);
+        }
+
+        if ($stmt->execute()) {
+            $stmt->bind_result($id, $image_url, $image_alt);
+
+            $images = array();
+
+            while ($stmt->fetch()) {
+                $images[] = array(
+                    'id' => $id,
+                    'image_url' => $image_url,
+                    'image_alt' => $image_alt
+                );
+            }
+            return $images;
+        } else {
+            die("Erreur lors de l'exécution de la requête : " . $stmt->error);
+        }
+    }
+
+    /**
+     * Récupère les images mobile depuis la base de données.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 30-10-2023
+     * @param string $columns Les colonnes à récupérer (par défaut, toutes les colonnes).
+     *
+     * @return array Un tableau contenant les images récupérées.
+     */
+    public function getImagesMobileFromDatabase($columns = "*")
+    {
+        $sql = "SELECT $columns FROM images WHERE is_desktop = 0";
+        $stmt = $this->db->prepare($sql);
+
+        if (!$stmt) {
+            die("Erreur de préparation de la requête : " . $this->db->error);
+        }
+
+        if ($stmt->execute()) {
+            $stmt->bind_result($id, $image_url, $image_alt);
+
+            $images = array();
+
+            while ($stmt->fetch()) {
+                $images[] = array(
+                    'id' => $id,
+                    'image_url' => $image_url,
+                    'image_alt' => $image_alt
+                );
+            }
+            return $images;
+        } else {
+            die("Erreur lors de l'exécution de la requête : " . $stmt->error);
+        }
+    }
+
+    /**
      * Obtient le chemin de l'image par son ID.
      *
      * @author RUIZ Anthony <ruiza@3il.fr>
@@ -155,29 +229,63 @@ class TbqVisuel
     }
 
     /**
-     * Met à jour le nom de l'image par son ID.
+     * Met à jour le nom de l'image desktop via son ID.
      *
      * @author RUIZ Anthony <ruiza@3il.fr>
      * @package Gestion des images du carousel
-     * @date 04-10-2023
+     * @date 30-10-2023
      * @param int $image_id L'ID de l'image à mettre à jour.
-     * @param string $new_image_name Le nouveau nom de l'image.
+     * @param string $desktop_image Le nouveau nom de l'image.
      *
      * @return bool Retourne true si la mise à jour est réussie, sinon false.
      */
-    public function updateImageName($image_id, $new_image_name)
+    public function updateImageNameDesktop($image_id, $desktop_image)
     {
-        $sql = "UPDATE images SET image_url = ? WHERE id = ?";
+        $is_desktop = 1; // Vous voulez définir is_desktop sur true (1)
+
+        $sql = "UPDATE images SET image_url = ?, is_desktop = ? WHERE id = ?";
         $stmt = $this->db->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
         }
 
-        $stmt->bind_param("si", $new_image_name, $image_id);
+        $stmt->bind_param("sii", $desktop_image, $is_desktop, $image_id);
 
         if ($stmt->execute()) {
-            return true; 
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * Met à jour le nom de l'image mobile via son ID.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 30-10-2023
+     * @param int $image_id L'ID de l'image à mettre à jour.
+     * @param string $mobile_image Le nouveau nom de l'image.
+     *
+     * @return bool Retourne true si la mise à jour est réussie, sinon false.
+     */
+    public function updateImageNameMobile($image_id, $mobile_image)
+    {
+        $is_desktop = 0; // Vous voulez définir is_desktop sur false (0)
+
+        $sql = "UPDATE images SET image_url = ?, is_desktop = ? WHERE id = ?";
+        $stmt = $this->db->prepare($sql);
+
+        if (!$stmt) {
+            die("Erreur de préparation de la requête : " . $this->db->error);
+        }
+
+        $stmt->bind_param("sii", $mobile_image, $is_desktop, $image_id);
+
+        if ($stmt->execute()) {
+            return true;
         } else {
             return false;
         }

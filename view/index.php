@@ -1,14 +1,3 @@
-<?php
-include("../model/db-config.php");
-include("../model/Tbq_visuel.php");
-
-// Créer une instance de TbqVisuel avec la connexion à la base de données
-$tbqVisuel = new TbqVisuel($conn);
-
-// Appeler la méthode pour récupérer les images
-$images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -19,7 +8,21 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/carouselPhoto.js"></script>
 </head>
+<?php
+include("../model/db-config.php");
+include("../model/Tbq_visuel.php");
 
+// Créer une instance de TbqVisuel avec la connexion à la base de données
+$tbqVisuel = new TbqVisuel($conn);
+
+// Appeler la méthode pour récupérer les images
+$isDesktop = $_SERVER['HTTP_USER_AGENT'];
+if (strpos($isDesktop, 'Mobile') !== false) {
+    $imagesToDisplay = $tbqVisuel->getImagesMobileFromDatabase("id, image_url, image_alt");
+}else{
+    $imagesToDisplay = $tbqVisuel->getImagesDesktopFromDatabase("id, image_url, image_alt");
+}
+?>
 <body>
     <?php include '../includes/front-header.php'; ?>
     <div class="corpsPage">
@@ -27,7 +30,7 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
             <h1 class="customTitle">Le gite Figuiès</h1>
             <div class="carousel-container">
                 <div class="carousel">
-                    <?php foreach ($images as $index => $image) : ?>
+                    <?php foreach ($imagesToDisplay as $index => $image) : ?>
                         <div class="carousel-slide <?= $index === 0 ? 'active' : ''; ?>">
                             <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>">
                         </div>
@@ -35,7 +38,7 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
                 </div>
                 <div class="carousel-text">
                     <button id="prevCarouselBtn">Précédent</button>
-                    <p id="imageCounter">Image 1/<?= count($images); ?></p>
+                    <p id="imageCounter">Image 1/<?= count($imagesToDisplay); ?></p>
                     <button id="nextCarouselBtn">Suivant</button>
                 </div>
             </div>
@@ -158,5 +161,4 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
         }
         fetchData();
     });
-
 </script>
