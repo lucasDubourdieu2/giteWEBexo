@@ -14,32 +14,36 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
 
 <head>
     <title>Site web Le gite</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/front_header.css">
     <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/index.css">
     <script src="../js/carouselPhoto.js"></script>
 </head>
 
-<body>
+<body>    
     <?php include '../includes/front-header.php'; ?>
     <div class="corpsPage">
-        <div class="gestionCarousel">
-            <h1 class="customTitle">Le gite Figuiès</h1>
-            <div class="carousel-container">
-                <div class="carousel">
-                    <?php foreach ($images as $index => $image) : ?>
-                        <div class="carousel-slide <?= $index === 0 ? 'active' : ''; ?>">
-                            <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>">
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-                <div class="carousel-text">
-                    <button id="prevCarouselBtn">Précédent</button>
-                    <p id="imageCounter">Image 1/<?= count($images); ?></p>
-                    <button id="nextCarouselBtn">Suivant</button>
+        <div class="carousel">
+            <div class="slideshow-container">
+
+                <h1 class="customTitle">Le gite Figuiès</h1>
+                <?php foreach ($images as $index => $image) : ?>
+                    <div class="mySlides fade">
+                        <div class="numbertext"><p id="imageCounter"><?= count($images); ?></p></div>
+                        <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>" style="width:100%">
+                    </div>
+                    
+                <?php endforeach; ?>   
+
+                <div class="navigation-container">
+                    <a class="prev" onclick="plusSlides(-1)">❮</a>
+                    <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
             </div>
+
         </div>
+    
         <div class="gestionIntro">
             <div class="intro">
                 <h1 class="titreIntro">Figuiès</h1>
@@ -159,4 +163,34 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
         fetchData();
     });
 
+</script>
+
+
+<script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+            showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+            showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            if (n > slides.length) {slideIndex = 1}    
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";  
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            }
 </script>
