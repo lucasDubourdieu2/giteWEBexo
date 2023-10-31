@@ -32,7 +32,7 @@ if (strpos($isDesktop, 'Mobile') !== false) {
                 <div class="carousel">
                     <?php foreach ($imagesToDisplay as $index => $image) : ?>
                         <div class="carousel-slide <?= $index === 0 ? 'active' : ''; ?>">
-                            <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>">
+                            <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>" loading="lazy">
                         </div>
                     <?php endforeach; ?>
                 </div>

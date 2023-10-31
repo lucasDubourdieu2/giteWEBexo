@@ -30,7 +30,7 @@
                 // Génère les lignes du tableau pour chaque image
                 foreach ($images as $image) {
                     echo "<tr>";
-                    echo "<td><img src=" . $image['image_url'] . " alt=". $image['image_alt'] ." class='previewCarousel'></td>";
+                    echo "<td><img src=" . $image['image_url'] . " alt=". $image['image_alt'] ." class='previewCarousel' loading='lazy'></td>";
                     echo "<td>" . $image['image_url'] . "</td>";
                     echo "<td>" . $image['image_alt'] . "</td>";
                     echo "<td><a href=\"../controller/deleteImage.php?id=" . $image['id'] . "\" class='suppression'>Supprimer</a></td>";
