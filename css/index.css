@@ -178,90 +178,66 @@ ul li {
 /************************************/
 /*             CARROUSEL            */
 /************************************/
-.gestionCarousel {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    background-color: #F7EDBF;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
-}
 
-.customTitle,
-#imageCounter { 
-    color: #080808;
-}
-
-.carousel-container {
-    position: relative;
-    width: 80%;
-    margin: 0 auto;
-}
-    
 .carousel {
-    margin: 15px;
     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
     overflow: hidden;
 }
 
-.carousel-slide {
-    min-width: 100%;
-    transition: transform 0.4s ease;
-}
-
-.carousel img {
+.mySlides {
+    display: none;
     max-width: 100%;
-    height: 450px;
-    
+    flex: 0 0 auto; 
 }
 
-.carousel-text {
-    display: flex;
-    justify-content: center;
-    align-items: baseline;
-    margin-top: 10px;
-    font-size: 16px;
-    font-weight: bold;
+
+.slideshow-container img {
+    max-width: 100%;
+    height: auto;
 }
 
-#prevCarouselBtn,
-#nextCarouselBtn {
-    display: flex;
-    cursor: pointer;
-    padding: 10px 20px;
-    background-color: #03989E;
+.navigation-container {
+    position: relative;
+}
+
+.prev, .next {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(0, 0, 0, 0.5);
     color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    margin: 10px;
+    font-size: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 30px;
+    cursor: pointer;
+    z-index: 1;
+    user-select: none;
+    transition: background-color 0.6s ease;
 }
 
-#nextCarouselBtn:hover,
-#prevCarouselBtn:hover {
-    background-color: #03989E;
+.prev {
+    left: 0; 
 }
 
-@media screen and (max-width: 646px) {
-    .carousel img {
-        max-width: 100%; 
-        height: 200px;
-        border-radius: 5px;
-    }
-
-    .carousel-text {
-        display: flex;
-        flex-direction: column; 
-        align-items: center;
-        margin-top: 10px;
-        font-size: 16px;
-        font-weight: bold;
-    }
-    
+.next {
+    right: 0; 
 }
 
+.carousel {
+    flex-direction: column;
+    align-items: center;
+}
+.prev, .next {
+    top: auto;
+    bottom: 20px;
+    margin-top: 0;
+}
 
-
-
-
+.mySlides.active {
+    display: block;
+}
