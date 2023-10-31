@@ -2,7 +2,10 @@
 <html>
 
 <head>
+    <meta name="keywords" content="gite, Aveyron, Rodez, reservation, location, famille">
+    <meta name="description" content="Le gite Figuiès en Aveyron">
     <title>Site web Le gite</title>
+    <link rel="icon" href="../img/logo/icone.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/front_header.css">
     <link rel="stylesheet" href="../css/front_footer.css">

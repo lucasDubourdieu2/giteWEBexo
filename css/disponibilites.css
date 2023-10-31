@@ -2,6 +2,8 @@ body {
     background-color: #F1EED9;
 }
 
+
+
 .corpsPage {
     margin-right: 100px;
     margin-left: 100px;
@@ -93,7 +95,8 @@ body {
     }
 }
 
-@media screen and (max-width: 646px) {
+
+@media screen and (max-width: 646px) {²
     .corpsPage {
         margin-right: 30px;
         margin-left: 30px;

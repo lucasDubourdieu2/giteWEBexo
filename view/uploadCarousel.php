@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pannel admin carousel</title>
+    <link rel="icon" href="../img/logo/icone.png" type="image/png">
     <link rel="stylesheet" href="../css/carousel.css">
 </head>
 <body>

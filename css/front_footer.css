@@ -18,7 +18,7 @@
     line-height: 1.5;
 }
 
-.btnNewsletter {
+.btnFooter {
     display: inline-block;
     padding: 10px 20px;
     background-color: #F1EED9;
@@ -29,6 +29,6 @@
     margin-top: 10px;
 }
 
-.btnNewsletter:hover {
-    background-color: #006d6d;
+.btnFooter:hover {
+    background-color: #DFDCC9;
 }

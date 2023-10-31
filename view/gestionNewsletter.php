@@ -3,6 +3,7 @@
 
 <head>
     <title>Site web Le gite</title>
+    <link rel="icon" href="../img/logo/icone.png" type="image/png">
     <link rel="stylesheet" href="../css/newsletterAdmin.css">
     <link rel="stylesheet" href="../css/front_header.css">
 </head>
