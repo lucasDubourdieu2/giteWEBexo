@@ -40,7 +40,7 @@ if (isset($_POST['upload'])) {
                     $mobile_image_name  = "figures-" . $image_id . "-mobile." . $file_extension;
 
                     // Redimensionne l'image en version desktop (400x400)
-                    resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/desktop/' . $desktop_image_name, 400, 400);
+                    resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/desktop/' . $desktop_image_name, 800, 600);
 
                     // Redimensionne l'image en version mobile (200x200)
                     resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/mobile/' . $mobile_image_name, 200, 200);
