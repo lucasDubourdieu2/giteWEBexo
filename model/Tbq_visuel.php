@@ -11,16 +11,16 @@ class TbqVisuel
 {
     private $db;
 
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
-    private $database = "giteAveyron";
+    // private $servername = "localhost";
+    // private $username = "root";
+    // private $password = "";
+    // private $database = "giteAveyron";
 
 
 
     public function __construct($db)
     {
-        $conn = new mysqli($this->servername, $this->username, $this->password, $this->database);
+        global $conn; 
         $this->db = $conn;
     }
 
@@ -38,9 +38,10 @@ class TbqVisuel
      */
     public function insertImage($image_url, $image_alt)
     {
+        global $conn; 
         // Préparation de la requête SQL pour l'insertion
         $sql = "INSERT INTO images (image_url, image_alt) VALUES (?, ?)";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
@@ -67,8 +68,9 @@ class TbqVisuel
      */
     public function deleteImage($id)
     {
+        global $conn; 
         $sql = "DELETE FROM images WHERE id = ?";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
@@ -95,8 +97,9 @@ class TbqVisuel
      */
     public function getImagesFromDatabase($columns = "*")
     {
+        global $conn; 
         $sql = "SELECT $columns FROM images";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
@@ -132,8 +135,9 @@ class TbqVisuel
      */
     public function getImagesDesktopFromDatabase($columns = "*")
     {
+        global $conn; 
         $sql = "SELECT $columns FROM images WHERE is_desktop = 1";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
@@ -169,8 +173,9 @@ class TbqVisuel
      */
     public function getImagesMobileFromDatabase($columns = "*")
     {
+        global $conn; 
         $sql = "SELECT $columns FROM images WHERE is_desktop = 0";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
@@ -206,8 +211,9 @@ class TbqVisuel
      */
     public function getImagePathById($id)
     {
+        global $conn; 
         $sql = "SELECT image_url FROM images WHERE id = ?";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
@@ -241,10 +247,11 @@ class TbqVisuel
      */
     public function updateImageNameDesktop($image_id, $desktop_image)
     {
-        $is_desktop = 1; // Vous voulez définir is_desktop sur true (1)
+        global $conn; 
+        $is_desktop = 1;
 
         $sql = "UPDATE images SET image_url = ?, is_desktop = ? WHERE id = ?";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);
@@ -273,10 +280,11 @@ class TbqVisuel
      */
     public function updateImageNameMobile($image_id, $mobile_image)
     {
-        $is_desktop = 0; // Vous voulez définir is_desktop sur false (0)
+        global $conn; 
+        $is_desktop = 0;
 
         $sql = "UPDATE images SET image_url = ?, is_desktop = ? WHERE id = ?";
-        $stmt = $this->db->prepare($sql);
+        $stmt = $conn->prepare($sql);
 
         if (!$stmt) {
             die("Erreur de préparation de la requête : " . $this->db->error);

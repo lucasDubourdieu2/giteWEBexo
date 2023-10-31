@@ -3,6 +3,8 @@ session_set_cookie_params(1200);
 session_start(); 
 
 include '../model/Tbq_client.php';
+include '../model/db-config.php';
+
 $_SESSION['erreurConnexion'] = ""; 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Récupérez les données du formulaire

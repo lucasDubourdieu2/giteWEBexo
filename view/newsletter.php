@@ -23,9 +23,20 @@
                 <input type="email" id="email" name="email" required>
                 <br>
                 <input type="checkbox" id="consentement" name="consentement" required>
-                <label for="consentement" >Je consens à recevoir des e-mails de la newsletter.</label>
+                <label for="consentement">Je consens à recevoir des e-mails de la newsletter.</label>
                 <br>
                 <input type="submit" class="btnNewsletter" value="S'inscrire">
+                <?php
+                if (!empty($_SESSION['emailValide'])) { ?>
+                    <p class="msgValid"><?php echo $_SESSION['emailValide']; ?></p>
+                <?php $_SESSION['emailValide'] = "";
+                } elseif (!empty($_SESSION['emailDejaUtiliser'])) { ?>
+                    <p class="msgErreur"><?php echo $_SESSION['emailDejaUtiliser']; ?></p>
+                <?php $_SESSION['emailDejaUtiliser'] = "";
+                } elseif (!empty($_SESSION['erreurInscription'])) { ?>
+                    <p class="msgErreur"><?php echo $_SESSION['erreurInscription']; ?></p>
+                <?php $_SESSION['erreurInscription'] = "";
+                } ?>
             </form>
         </div>
     </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <title>Pannel admin accueil</title>
@@ -7,14 +8,24 @@
     <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/formAccueil.css">
 </head>
+
 <body>
-    <?php include '../includes/front-header.php'; 
+    <?php include '../includes/front-header.php';
     if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
         header('Location: ../view/index.php');
         exit;
-    }?>
+    } ?>
     <div class="corpsPage">
         <h1 class="titre">Modifier les informations de la page d'accueil du gite Figuiès</h1>
+        <?php
+        if (!empty($_SESSION['modifOk'])) { ?>
+            <p class="msgValid"><?php echo $_SESSION['modifOk']; ?></p>
+        <?php $_SESSION['modifOk'] = "";
+        } elseif (!empty($_SESSION['modifErreur'])) { ?>
+            <p class="msgErreur"><?php echo $_SESSION['modifErreur']; ?></p>
+        <?php $_SESSION['modifErreur'] = "";
+        }
+        ?>
         <form action="../controller/upload_accueil.php" method="POST" enctype="multipart/form-data">
             <div class="conteneurflex">
                 <div class="boite">
@@ -28,7 +39,7 @@
                     <textarea class="zonetexte" name="modif_introAccroche" id="modif_introAccroche"></textarea>
                 </div>
             </div>
-            
+
             <div class="conteneurflex">
                 <div class="boite">
                     <label for="modif_intro">texte intro :</label>
@@ -45,7 +56,7 @@
                     <textarea class="zonetexte" name="modif_equipementEtService" id="modif_equipementEtService"></textarea>
                 </div>
             </div>
-        
+
             <div class="conteneurflex">
                 <div class="boite">
                     <label for="modif_langue">Langue :</label>
@@ -60,7 +71,7 @@
                     <textarea class="zonetexte" name="modif_MoyenDePaiement" id="modif_MoyenDePaiement"></textarea>
                 </div>
             </div>
-        
+
             <div class="conteneurflex">
                 <div class="boite">
                     <label for="modif_saison">Saison :</label>
@@ -74,9 +85,11 @@
     </div>
     <?php include '../includes/front-footer.php'; ?>
 </body>
+
 </html>
 <script>
-document.addEventListener("DOMContentLoaded", function () {;
+    document.addEventListener("DOMContentLoaded", function() {
+        ;
         var modif_tarifAccroche = document.getElementById("modif_tarifAccroche");
         var modif_introAccroche = document.getElementById("modif_introAccroche");
         var modif_intro = document.getElementById("modif_intro");
@@ -91,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {;
         function fetchData() {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "../controller/get_latest_accueil.php", true);
-            xhr.onreadystatechange = function () {
+            xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var data = JSON.parse(xhr.responseText);
                     if (data) {

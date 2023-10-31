@@ -2,7 +2,7 @@
 session_set_cookie_params(1200);
 session_start();
 
-include("../model/db-config.php");
+include '../model/db-config.php';
 include("../model/Tbq_visuel.php");
 
 $_SESSION['imageOk'] = "";

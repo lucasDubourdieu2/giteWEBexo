@@ -1,4 +1,5 @@
 <?php
+session_start();
 include '../model/db-config.php';
 include '../model/Tbq_index.php';
 
@@ -18,8 +19,10 @@ if (isset($_POST['miseAJour'])) {
     $result = $tbqIndex->modifInfoAccueil($tarifAccroche, $introAccroche, $intro, $capacite, $equipementEtService, $langue, $tarifs, $moyenDePaiement, $saison);
 
     if ($result) {
-        echo "Mise à jour réussie";
+        $_SESSION['modifOk'] = "La modification de l'accueil a bien été effectuée";
     } else {
-        echo "Erreur lors de la mise à jour : " . $conn->error;
+        $_SESSION['modifError'] = "Une erreur est intervenu lors de la modification de l'accueil, veuillez recommencer";
     }
+    header('Location: ../view/formAccueil.php');
+    exit;
 }

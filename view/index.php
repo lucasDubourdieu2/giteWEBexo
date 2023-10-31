@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/front_header.css">
     <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/index.css">
-    <script src="../js/carouselPhoto.js"></script>
 </head>
 <?php
 include("../model/db-config.php");

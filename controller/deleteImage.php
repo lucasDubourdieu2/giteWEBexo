@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../model/db-config.php");
 include("../model/Tbq_visuel.php");
 
@@ -17,17 +18,27 @@ if (isset($_GET['id'])) {
         if (unlink($imagePath)) {
             // Si la suppression du fichier réussit, supprimez également l'entrée de la base de données
             if ($tbqVisuel->deleteImage($id)) {
+                $_SESSION['suppressionOK'] = "L'image a bien été suprimmée";
                 header('Location: ../view/uploadCarousel.php');
+                exit;
             } else {
-                header('Location: ../view/uploadCarousel.php?errorSuppression');
+                $_SESSION['suppressionErreur'] = "Une erreur est intervenue lors de la suppression, veuillez recommencer";
+                header('Location: ../view/uploadCarousel.php');
+                exit;
             }
         } else {
-            header('Location: ../view/uploadCarousel.php?errorSuppressionFichier');
+            $_SESSION['suppressionErreurFichier'] = "Une erreur est intervenue lors de l'image', veuillez recommencer";
+            header('Location: ../view/uploadCarousel.php');
+            exit;
         }
     } else {
-        header('Location: ../view/uploadCarousel.php?errorImageNonTrouvee');
+        $_SESSION['erreurPasImage'] = "Aucune image a été trouver, veuillez recommencer";
+        header('Location: ../view/uploadCarousel.php');
+        exit;
     }
 } else {
-    header('Location: ../view/uploadCarousel.php?errorID');
+    $_SESSION['erreurID'] = "Une erreur est intervenue lors de la suppression, veuillez recommencer";
+    header('Location: ../view/uploadCarousel.php');
+    exit;
 }
 ?>  
