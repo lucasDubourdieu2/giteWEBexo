@@ -23,6 +23,7 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
 
 <body>    
     <?php include '../includes/front-header.php'; ?>
+
     <div class="corpsPage">
         <div class="carousel">
             <div class="slideshow-container">
@@ -30,7 +31,6 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
                 <h1 class="customTitle">Le gite Figuiès</h1>
                 <?php foreach ($images as $index => $image) : ?>
                     <div class="mySlides fade">
-                        <div class="numbertext"><p id="imageCounter"><?= count($images); ?></p></div>
                         <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>" style="width:100%">
                     </div>
                     
@@ -41,6 +41,7 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
                     <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
             </div>
+        
 
         </div>
     
@@ -167,6 +168,7 @@ $images = $tbqVisuel->getImagesFromDatabase("id, image_url, image_alt");
 
 
 <script>
+
             let slideIndex = 1;
             showSlides(slideIndex);
 
