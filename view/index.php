@@ -15,17 +15,16 @@
 include("../model/db-config.php");
 include("../model/Tbq_visuel.php");
 
-// Créer une instance de TbqVisuel avec la connexion à la base de données
 $tbqVisuel = new TbqVisuel($conn);
 
-// Appeler la méthode pour récupérer les images
 $isDesktop = $_SERVER['HTTP_USER_AGENT'];
 if (strpos($isDesktop, 'Mobile') !== false) {
     $imagesToDisplay = $tbqVisuel->getImagesMobileFromDatabase("id, image_url, image_alt");
-}else{
+} else {
     $imagesToDisplay = $tbqVisuel->getImagesDesktopFromDatabase("id, image_url, image_alt");
 }
 ?>
+
 <body>
 
     <?php include '../includes/front-header.php'; ?>
@@ -39,18 +38,18 @@ if (strpos($isDesktop, 'Mobile') !== false) {
                     <div class="mySlides fade">
                         <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>" loading="lazy">
                     </div>
-                    
-                <?php endforeach; ?>   
+
+                <?php endforeach; ?>
 
                 <div class="navigation-container">
                     <a class="prev" onclick="plusSlides(-1)">❮</a>
                     <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
             </div>
-        
+
 
         </div>
-    
+
         <div class="gestionIntro">
             <div class="intro">
                 <h1 class="titreIntro">Figuiès</h1>
@@ -63,50 +62,50 @@ if (strpos($isDesktop, 'Mobile') !== false) {
             </div>
         </div>
         <div class="corpsPage">
-            </div>
-                <div class="conteneurflex">
-                    <div class="capacite">
-                        <div class="gestionCapacite">
-                            <h2 class="customTitre">Capacité</h2>
-                            <p id="modif_capacite"></p>
-                        </div>
-                    </div>
-                    <div class="equipement">
-                        <div class="gestionEquipement">
-                            <h2 class="customTitre">Equipements et services</h2>
-                            <p id="modif_equipementEtService"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="conteneurflex">
-                    <div class="langues">
-                        <div class="gestionLangue">
-                            <h2 class="customTitre">Langues</h2>
-                            <p id="modif_langue"></p>
-                        </div>
-                    </div>
-                    <div class="tarifs">
-                        <div class="gestionTarifs">
-                            <h2 class="customTitre">Tarifs</h2>
-                            <p id="modif_tarifs"></p>
-                        </div>
-                    </div>
-                </div>
-                <div class="conteneurflex">
-                    <div class="moyenPayement">
-                        <div class="gestionPayement">
-                            <h2 class="customTitre">Moyen de payement</h2>
-                            <p id="modif_MoyenDePaiement"></p>
-                        </div>
-                    </div>
-                    <div class="disponibilites">
-                        <div class="gestionDispo">
-                            <h2 class="customTitre">Saison</h2>
-                            <p id="modif_saison"></p>
-                        </div>
-                    </div>
+        </div>
+        <div class="conteneurflex">
+            <div class="capacite">
+                <div class="gestionCapacite">
+                    <h2 class="customTitre">Capacité</h2>
+                    <p id="modif_capacite"></p>
                 </div>
             </div>
+            <div class="equipement">
+                <div class="gestionEquipement">
+                    <h2 class="customTitre">Equipements et services</h2>
+                    <p id="modif_equipementEtService"></p>
+                </div>
+            </div>
+        </div>
+        <div class="conteneurflex">
+            <div class="langues">
+                <div class="gestionLangue">
+                    <h2 class="customTitre">Langues</h2>
+                    <p id="modif_langue"></p>
+                </div>
+            </div>
+            <div class="tarifs">
+                <div class="gestionTarifs">
+                    <h2 class="customTitre">Tarifs</h2>
+                    <p id="modif_tarifs"></p>
+                </div>
+            </div>
+        </div>
+        <div class="conteneurflex">
+            <div class="moyenPayement">
+                <div class="gestionPayement">
+                    <h2 class="customTitre">Moyen de payement</h2>
+                    <p id="modif_MoyenDePaiement"></p>
+                </div>
+            </div>
+            <div class="disponibilites">
+                <div class="gestionDispo">
+                    <h2 class="customTitre">Saison</h2>
+                    <p id="modif_saison"></p>
+                </div>
+            </div>
+        </div>
+    </div>
     </div>
     <?php include '../includes/front-footer.php'; ?>
 </body>
@@ -134,7 +133,7 @@ if (strpos($isDesktop, 'Mobile') !== false) {
     });
 
 
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", function() {
         var modif_tarifAccroche = document.getElementById("modif_tarifAccroche");
         var modif_introAccroche = document.getElementById("modif_introAccroche");
         var modif_intro = document.getElementById("modif_intro");
@@ -149,7 +148,7 @@ if (strpos($isDesktop, 'Mobile') !== false) {
         function fetchData() {
             var xhr = new XMLHttpRequest();
             xhr.open("GET", "../controller/get_latest_accueil.php", true);
-            xhr.onreadystatechange = function () {
+            xhr.onreadystatechange = function() {
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     var data = JSON.parse(xhr.responseText);
                     if (data) {
@@ -169,31 +168,33 @@ if (strpos($isDesktop, 'Mobile') !== false) {
         }
         fetchData();
     });
-
 </script>
 
 <script>
+    let slideIndex = 1;
+    showSlides(slideIndex);
 
-            let slideIndex = 1;
-            showSlides(slideIndex);
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-            function plusSlides(n) {
-            showSlides(slideIndex += n);
-            }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-            function currentSlide(n) {
-            showSlides(slideIndex = n);
-            }
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
 
-            function showSlides(n) {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-        
-            slides[slideIndex-1].style.display = "block";  
-            }
+        slides[slideIndex - 1].style.display = "block";
+    }
 </script>

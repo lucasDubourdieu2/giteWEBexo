@@ -9,7 +9,6 @@ $_SESSION['validCalendrier'] = ""; // message affiche si l'insertion/suppression
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $tbqCalendrier = new tbqCalendrier($conn);
-     // Récupérez les données du formulaire
      $nom = trim($_POST['nom']);
      $dateDeb = trim($_POST['dateDeb']);
      $dateFin = trim($_POST['dateFin']);

@@ -45,7 +45,7 @@ input {
 button {
     width: 100%;
     padding: 10px;
-    background-color: #03989E;
+    background-color: #58351A;
     color: #fff;
     border: none;
     border-radius: 3px;
@@ -55,7 +55,7 @@ button {
 
 .lienInscription {
     text-decoration: none;
-    color: #03989E;
+    color: #58351A;
 }
 
 .lienInscription:hover {

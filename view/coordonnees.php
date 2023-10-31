@@ -14,7 +14,7 @@
 </head>
 
 <body>
-        <?php include '../includes/front-header.php'; ?>
+    <?php include '../includes/front-header.php'; ?>
     <main>
         <div class="corpsPage">
             <address class="coord">
@@ -63,6 +63,7 @@
             </address>
         </div>
     </main>
-        <?php include '../includes/front-footer.php'; ?>
+    <?php include '../includes/front-footer.php'; ?>
 </body>
+
 </html>

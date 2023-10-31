@@ -28,7 +28,7 @@ class tbqCalendrier
     /**
      * Insere une réservation dans la BD
      *
-     * @author DUBOURDIEU Lucas <ruiza@3il.fr>
+     * @author DUBOURDIEU Lucas <dubourdl@3il.fr>
      * @package Gestion du calendrier de reservation
      * @date 18-10-2023
      * @return bool Retourne true si l'insertion est réussie, sinon false.
@@ -55,7 +55,7 @@ class tbqCalendrier
     /**
      * Supprime une réservation du calendrier dans la base de données.
      *
-     * @author DUBOURDIEU Lucas <ruiza@3il.fr>
+     * @author DUBOURDIEU Lucas <dubourdl@3il.fr>
      * @package Gestion du calendrier de reservation
      * @date 18-10-2023
      * @param string $nom Le nom de la réservation à supprimer.
@@ -89,7 +89,7 @@ class tbqCalendrier
     /**
      * Détermine si une réservation avec la même date de début et de fin existe déjà dans le calendrier.
      *
-     * @author DUBOURDIEU Lucas <ruiza@3il.fr>
+     * @author DUBOURDIEU Lucas <dubourdl@3il.fr>
      * @package Gestion du calendrier de reservation
      * @date 18-10-2023
      * @param string $dateDeb La date de début de la réservation à vérifier.
@@ -123,7 +123,7 @@ class tbqCalendrier
 
     /**
      * Récupère toutes les réservations du calendrier sous forme d'un tableau.
-     * @author DUBOURDIEU Lucas <ruiza@3il.fr>
+     * @author DUBOURDIEU Lucas <dubourdl@3il.fr>
      * @package Gestion du calendrier de reservation
      * @date 18-10-2023
      * @param string $dateDeb La date de début de la réservation à vérifier.

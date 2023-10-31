@@ -18,20 +18,15 @@ if (isset($_POST['upload'])) {
         $image_name = $_FILES['image']['name'];
         $image_alt = $_POST['image_alt'];
 
-        // Obtener l'extension du fichier
         $file_extension = pathinfo($image_name, PATHINFO_EXTENSION);
 
-        // Liste des extensions d'images autorisées
         $allowed_extensions = array('jpg', 'png');
 
-        // Vérifie si l'extension est autorisée
         if (in_array(strtolower($file_extension), $allowed_extensions)) {
             $upload_directory = "../img/";
-            // Créez une instance de TbqVisuel avec la connexion à la base de données
             $tbqVisuel = new TbqVisuel($conn);
 
             if (move_uploaded_file($image_tmp, $upload_directory . 'original/' . $image_name)) {
-                // L'upload a réussi
                 $image_id = $tbqVisuel->insertImage($upload_directory . 'original/' . $image_name, $image_alt);
                 $image_id = $tbqVisuel->getLastInsertedId();
                 if ($image_id) {
@@ -85,7 +80,6 @@ function resizeImage($sourcePath, $destinationPath, $width, $height, $compressio
 
     imagecopyresampled($image, $source, 0, 0, 0, 0, $width, $height, $origWidth, $origHeight);
 
-    // Enregistrez l'image redimensionnée au format JPEG ou PNG en fonction de l'extension d'origine
     $fileExtension = strtolower(pathinfo($sourcePath, PATHINFO_EXTENSION));
     if ($fileExtension === 'jpg' || $fileExtension === 'jpeg') {
         imagejpeg($image, $destinationPath, $compressionQuality);

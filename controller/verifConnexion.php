@@ -7,7 +7,6 @@ include '../model/db-config.php';
 
 $_SESSION['erreurConnexion'] = ""; 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Récupérez les données du formulaire
     $mail = trim($_POST['mail']);
     $password = trim($_POST['password']);
 

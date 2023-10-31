@@ -14,7 +14,6 @@ session_start();
       <li><a href="../view/disponibilites.php">Disponibilités</a></li>
       <li><a href="../view/coordonnees.php">Coordonnées</a></li>
       <?php
-            // Vérifiez l'état de la session
             if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             ?>

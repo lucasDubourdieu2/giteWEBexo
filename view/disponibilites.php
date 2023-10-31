@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset='utf-8' />
     <meta name="keywords" content="gite, Aveyron, Rodez, reservation, location, famille">
@@ -14,8 +15,8 @@
 </head>
 
 <body>
-    <?php include '../includes/front-header.php';?>
-    <div class="corpsPage">    
+    <?php include '../includes/front-header.php'; ?>
+    <div class="corpsPage">
         <?php if (!empty($_SESSION['erreurCalendrier'])) { ?>
             <p class="msgErreur"><?php echo $_SESSION['erreurCalendrier']; ?></p>
             <?php $_SESSION['erreurCalendrier'] = "" ?>
@@ -44,10 +45,11 @@
 
         <?php
             }
-        }?>
+        } ?>
     </div>
     <?php include '../includes/front-footer.php'; ?>
 
-    
+
 </body>
+
 </html>
