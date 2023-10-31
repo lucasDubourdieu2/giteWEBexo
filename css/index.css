@@ -11,6 +11,17 @@ body {
 
 }
 
+.customTitle {
+    font-size: 50px;
+    text-align: center;
+    text-shadow: -1px -1px 0 #ffffff,  
+    1px -1px 0 #ffffff,
+    -1px 1px 0 #ffffff,
+     1px 1px 0 #ffffff;
+     color:#2E221F;
+
+}
+
 #modif_intro,
 #modif_equipementEtService,
 #modif_langue,
@@ -196,6 +207,7 @@ ul li {
 
 
 .slideshow-container img {
+    border-radius: 5px;
     max-width: 100%;
     height: auto;
 }
@@ -206,14 +218,14 @@ ul li {
 
 .prev, .next {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 80px;
+    height: 80px;
     background-color: rgba(0, 0, 0, 0.5);
     color: white;
     font-size: 18px;
     border-radius: 50%;
     text-align: center;
-    line-height: 30px;
+    line-height: 80px;
     cursor: pointer;
     z-index: 1;
     user-select: none;
@@ -240,4 +252,23 @@ ul li {
 
 .mySlides.active {
     display: block;
+}
+
+
+@media screen and (max-width: 646px) {
+    .prev, .next {
+        position: absolute;
+        width: 6    0px;
+        height: 60px;
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        font-size: 18px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        z-index: 1;
+        user-select: none;
+        transition: background-color 0.6s ease;
+    }
 }

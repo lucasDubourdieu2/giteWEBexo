@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Pannel admin accueil</title>
+    <link rel="icon" href="../img/logo/icone.png" type="image/png">
     <link rel="stylesheet" href="../css/front_header.css">
     <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/formAccueil.css">

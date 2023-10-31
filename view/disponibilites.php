@@ -2,7 +2,10 @@
 <html>
 <head>
     <meta charset='utf-8' />
+    <meta name="keywords" content="gite, Aveyron, Rodez, reservation, location, famille">
+    <meta name="description" content="Le gite Figuiès en Aveyron">
     <title>Gite Figuies</title>
+    <link rel="icon" href="../img/logo/icone.png" type="image/png">
     <link rel="stylesheet" href="../css/front_header.css">
     <link rel="stylesheet" href="../css/front_footer.css">
     <link rel="stylesheet" href="../css/disponibilites.css">
@@ -44,5 +47,7 @@
         }?>
     </div>
     <?php include '../includes/front-footer.php'; ?>
+
+    
 </body>
 </html>

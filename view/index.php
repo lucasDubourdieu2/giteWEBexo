@@ -2,7 +2,10 @@
 <html>
 
 <head>
+    <meta name="keywords" content="gite, Aveyron, Rodez, reservation, location, famille">
+    <meta name="description" content="Le gite Figuiès en Aveyron">
     <title>Site web Le gite</title>
+    <link rel="icon" href="../img/logo/icone.png" type="image/png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="../css/front_header.css">
     <link rel="stylesheet" href="../css/front_footer.css">
@@ -185,16 +188,12 @@ if (strpos($isDesktop, 'Mobile') !== false) {
             function showSlides(n) {
             let i;
             let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
             if (n > slides.length) {slideIndex = 1}    
             if (n < 1) {slideIndex = slides.length}
             for (i = 0; i < slides.length; i++) {
                 slides[i].style.display = "none";  
             }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
+        
             slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
             }
 </script>

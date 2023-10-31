@@ -3,6 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
+    <link rel="icon" href="../img/logo/icone.png" type="image/png">
     <link rel="stylesheet" href="../css/carousel.css">
     <link rel="stylesheet" href="../css/front_header.css">
     <link rel="stylesheet" href="../css/front_footer.css">
