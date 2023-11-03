@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
      $dateDeb = trim($_POST['dateDeb']);
      $dateFin = trim($_POST['dateFin']);
 
-     if ($tbqCalendrier->dateExist($nom, $dateDeb, $dateFin)) {
+     if ($tbqCalendrier->dateExist($dateDeb, $dateFin)) {
         if (isset($_POST['supprimer'])) {
             if ($tbqCalendrier->supDateCalendrier($nom, $dateDeb, $dateFin)) {
                 $_SESSION['validCalendrier'] =  "La suppression de la réservation a bien été effectué";

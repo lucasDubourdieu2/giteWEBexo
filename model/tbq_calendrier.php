@@ -132,7 +132,6 @@ class tbqCalendrier
      */
     public function recupDateCalendrier()
     {
-        global $conn;
         $reservations = array();
 
         $sql = "SELECT nom, dateDeb, dateFin FROM disponibilites";
