@@ -16,3 +16,17 @@ form {
 .titleNewsletter{
     text-align: center;
 }
+
+#telecharger {
+    padding: 10px 20px;
+    background-color: #F1EED9;
+    color: black;
+    border-color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#telecharger:hover {
+    background-color: #DFDCC9;
+}
