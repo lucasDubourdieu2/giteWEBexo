@@ -311,4 +311,20 @@ class TbqVisuel
     {
         return $this->db->insert_id;
     }
+
+    public function countImages() {
+        global $conn;
+        $sql = "SELECT COUNT(*) as count FROM images";
+        $stmt = $conn->prepare($sql);
+    
+        if (!$stmt) {
+            die("Erreur de préparation de la requête : " . $conn->error);
+        }
+    
+        $stmt->execute();
+        $result = $stmt->get_result();
+        $row = $result->fetch_assoc();
+        return $row['count'];
+    }
+    
 }

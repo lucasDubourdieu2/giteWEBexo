@@ -16,7 +16,7 @@ include("../model/db-config.php");
 include("../model/Tbq_visuel.php");
 
 $tbqVisuel = new TbqVisuel($conn);
-
+$numberImg = $tbqVisuel->countImages();
 $isDesktop = $_SERVER['HTTP_USER_AGENT'];
 if (strpos($isDesktop, 'Mobile') !== false) {
     $imagesToDisplay = $tbqVisuel->getImagesMobileFromDatabase("id, image_url, image_alt");
@@ -39,12 +39,15 @@ if (strpos($isDesktop, 'Mobile') !== false) {
                         <img src="<?= $image['image_url']; ?>" alt="<?= $image['image_alt']; ?>" loading="lazy">
                     </div>
 
-                <?php endforeach; ?>
-
+                <?php endforeach; 
+                if ($numberImg > 0) {
+                    ?>
                 <div class="navigation-container">
                     <a class="prev" onclick="plusSlides(-1)">❮</a>
                     <a class="next" onclick="plusSlides(1)">❯</a>
                 </div>
+                <?php
+                } ?>
             </div>
 
 
