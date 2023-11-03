@@ -312,6 +312,13 @@ class TbqVisuel
         return $this->db->insert_id;
     }
 
+     /**
+     * Obtient le nombre d'image.
+     *
+     * @author RUIZ Anthony <ruiza@3il.fr>
+     * @package Gestion des images du carousel
+     * @date 03-11-2023
+     */
     public function countImages() {
         global $conn;
         $sql = "SELECT COUNT(*) as count FROM images";
