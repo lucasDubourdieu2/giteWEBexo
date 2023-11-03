@@ -17,7 +17,7 @@ session_start();
             if (isset($_SESSION['utilisateur_connecte']) && $_SESSION['utilisateur_connecte'] === true) {
                 if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
             ?>
-                    <li class="item"><a class="lienMenu" href="../view/uploadCarousel.php">Panel Carousel</a></li>
+                    <li class="item"><a class="lienMenu" href="../view/uploadCarousel.php">Panel Carrousel</a></li>
                     <li class="item"><a class="lienMenu" href="../view/formAccueil.php">Gérer la page d'accueil</a></li>
                     <li class="item"><a class="lienMenu" href="../view/gestionNewsletter.php">Gérer newsletter</a></li>
             <?php
