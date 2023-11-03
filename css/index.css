@@ -149,26 +149,33 @@ ul li {
     margin-bottom: 10px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
     .titreIntro {
-        font-size: 24px;
+        font-size: 48px;
     }
 
     .customTitre {
-        font-size: 20px;
+        font-size: 48px;
     }
 
-    .customText {
-        font-size: 14px;
+    .customTitle{
+        font-size: 72px;
     }
 
-    ul li {
-        font-size: 14px;
+    p{
+        font-size: 30px;
+    }
+    .enSavoirPlus{
+        font-size: 30px;
+    }
+
+    .hidden-text{
+        font-size: 30px;
     }
 }
 
 
-@media screen and (max-width: 646px) {
+@media screen and (max-width: 992px) {
     .conteneurflex {
         display: flex;
         flex-direction: column;
@@ -183,7 +190,7 @@ ul li {
     }
 }
 
-@media screen and (min-width: 647px) {
+@media screen and (min-width: 992px) {
     .conteneurflex {
         display: flex;
         align-items: stretch;
@@ -260,7 +267,7 @@ ul li {
 }
 
 
-@media screen and (max-width: 646px) {
+@media screen and (max-width: 992px) {
     .prev, .next {
         position: absolute;
         width: 60px;

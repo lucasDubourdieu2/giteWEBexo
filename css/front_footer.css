@@ -14,7 +14,7 @@
 
 .left-section p,
 .right-section p {
-    font-size: 16px;
+    font-size: 30px;
     line-height: 1.5;
 }
 
@@ -27,6 +27,8 @@
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
+    height: auto;
+    width: 200px;
 }
 
 .btnFooter:hover {

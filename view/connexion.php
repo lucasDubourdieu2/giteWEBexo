@@ -24,7 +24,6 @@
                 <p class="msgErreur"><?php echo $_SESSION['erreurConnexion']; ?></p>
                 <?php $_SESSION['erreurConnexion'] = "" ?>
             <?php } ?>
-            <p>Pas encore de compte ? <a href="../view/inscription.php" class="lienInscription">Inscrivez-vous</a></p>
         </div>
     </div>
     <?php include '../includes/front-footer.php'; ?>

@@ -14,13 +14,15 @@ body {
     padding: 0;
 }
 
-/* Les autres styles CSS pour le contenu restent inchangés */
+
 .container {
     background-color: #F7EDBF;
     padding: 20px;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 h1 {
@@ -32,6 +34,8 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 input {
@@ -40,6 +44,8 @@ input {
     margin-bottom: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 button {
@@ -53,15 +59,6 @@ button {
     font-weight: bold;
 }
 
-.lienInscription {
-    text-decoration: none;
-    color: #58351A;
-}
-
-.lienInscription:hover {
-    text-decoration: underline;
-}
-
 .msgErreur {
     text-align: center;
     margin: 10px;
@@ -70,5 +67,33 @@ button {
     background: #cc2929;
     border-radius: 5px;
     font-weight: bold;
-    box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media screen and (max-width: 992px) {
+    form {
+        height: auto;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    button {
+        width: 400px;
+        height: auto;
+        font-size: 40px;
+    }
+
+    input {
+        font-size: 30px;
+    }
+
+    h1 {
+        font-size: 72px;
+    }
+
+    .msgErreur {
+        font-size: 25px;
+    }
+
 }

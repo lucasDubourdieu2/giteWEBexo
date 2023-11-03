@@ -6,7 +6,7 @@
         </div>
         <div class="right-section">
             <p>Suivez-nous sur nos différents réseaux</p>
-            <a href="https://www.facebook.com/gitefiguies" target="_blank"><img src="../img/facebook.png" alt="logoFacebook" style="width: 50px; height:auto;"></a>
+            <a href="https://www.facebook.com/gitefiguies" target="_blank"><img src="../img/facebook.png" alt="logoFacebook"></a>
         </div>
     </div>
 </footer>

@@ -19,11 +19,11 @@ body {
 .titre{
     padding: 15px;
 
-    @media screen and (max-width: 646px) {
+    @media screen and (max-width: 992px) {
         text-align: center;
     }
 }
-@media screen and (max-width: 646px) {
+@media screen and (max-width: 992px) {
     .corpsPage {
         margin-right: 30px;
         margin-left: 30px;

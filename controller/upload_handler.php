@@ -38,7 +38,7 @@ if (isset($_POST['upload'])) {
                     resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/desktop/' . $desktop_image_name, 800, 600);
 
                     // Redimensionne l'image en version mobile (200x200)
-                    resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/mobile/' . $mobile_image_name, 200, 200);
+                    resizeImage($upload_directory . 'original/' . $image_name, $upload_directory . 'resizeImg/mobile/' . $mobile_image_name, 500, 500);
 
                     $desktop_image = $upload_directory . 'resizeImg/desktop/' . $desktop_image_name;
                     $mobile_image = $upload_directory . 'resizeImg/mobile/' . $mobile_image_name;
