@@ -10,6 +10,8 @@ body {
 }
 
 #calendar {
+    display: flex;
+    flex-direction: column;
     margin: 20px;
     padding: 5px 5px;
     background: #F7EDBF;
@@ -83,25 +85,12 @@ body {
     margin: 10px; 
 }
 
-
-@media screen and (min-width: 768px) {
-    .button-container {
-        flex-direction: row; 
-        justify-content: space-between; 
-    }
-
-    .button-container button {
-        margin-top: 0; 
-    }
-}
-
-
-@media screen and (max-width: 646px) {²
-    .corpsPage {
-        margin-right: 30px;
-        margin-left: 30px;
-    
-    }
+.fc-day {
+    flex: 0 0 calc(14.28% - 10px); 
+    margin: 5px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px;
 }
 
 .msgErreur {
@@ -126,4 +115,37 @@ body {
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
 }
 
+@media screen and (max-width: 768px) {
+    #calendar {
+        margin: 10px;
+        padding: 5px;
+    }
 
+    .fc-day {
+        flex: 0 0 calc(33.33% - 10px); 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .fc-day {
+        flex: 0 0 calc(50% - 10px); 
+    }
+}
+@media screen and (min-width: 768px) {
+    .button-container {
+        flex-direction: row; 
+        justify-content: space-between; 
+    }
+
+    .button-container button {
+        margin-top: 0; 
+    }
+}
+
+@media screen and (max-width: 646px) {²
+    .corpsPage {
+        margin-right: 30px;
+        margin-left: 30px;
+    
+    }
+}
