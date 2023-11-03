@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             } 
         } else {
             // Cas d'une suppression alors que la réservation n'existe pas
-            $_SESSION['erreurCalendrier'] =  "Aucune réservation n'exise pour ces dates !";
+            $_SESSION['erreurCalendrier'] =  "Aucune réservation n'existe pour ces dates !";
             header('Location: ../view/disponibilites.php');
             exit;
         }
