@@ -11,7 +11,7 @@
 <body>
     <?php include '../includes/front-header.php';
     if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-        header('Location: ../view/index.php');
+        header('Location: ../index.php');
         exit;
     } ?>
     <h1 class="titleNewsletter">Page administrateur de la gestion de la newsletter</h1>

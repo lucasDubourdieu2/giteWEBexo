@@ -5,7 +5,7 @@
  * @package Gestion des données de la page d'accueil
  * @date 24-10-2023
  */
-include("../model/db-config.php");
+include("db-config.php");
 
 class TbqIndex
 {

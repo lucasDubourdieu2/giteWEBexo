@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="../css/index.css">
 </head>
 <?php
-include("../model/db-config.php");
-include("../model/Tbq_visuel.php");
+include("model/db-config.php");
+include("model/Tbq_visuel.php");
 
 $tbqVisuel = new TbqVisuel($conn);
 $numberImg = $tbqVisuel->countImages();
@@ -27,7 +27,7 @@ if (strpos($isDesktop, 'Mobile') !== false) {
 
 <body>
 
-    <?php include '../includes/front-header.php'; ?>
+    <?php include 'includes/front-header.php'; ?>
 
     <div class="corpsPage">
         <div class="carousel">
@@ -110,7 +110,7 @@ if (strpos($isDesktop, 'Mobile') !== false) {
         </div>
     </div>
     </div>
-    <?php include '../includes/front-footer.php'; ?>
+    <?php include 'includes/front-footer.php'; ?>
 </body>
 
 </html>

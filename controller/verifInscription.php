@@ -52,7 +52,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($stmt_insert->execute()) {
         echo "Inscription réussie!";
-        header('Location: ../view/index.php');
+        header('Location: ../index.php');
     } else {
         echo "Erreur lors de l'inscription : " . $stmt_insert->error;
         header('Location: ../view/inscription.php');

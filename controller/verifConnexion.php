@@ -16,11 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($role === 'admin') {
             $_SESSION['utilisateur_connecte'] = true; 
             $_SESSION['role'] = 'admin';
-            header('Location: ../view/index.php'); 
+            header('Location: ../index.php'); 
             exit;
         }else{
             $_SESSION['utilisateur_connecte'] = true; 
-            header('Location: ../view/index.php'); 
+            header('Location: ../index.php'); 
             exit;
         }
     } else {

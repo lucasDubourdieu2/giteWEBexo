@@ -5,7 +5,7 @@
  * @package Gestion des newsletter
  * @date 04-10-2023
  */
-include("../model/db-config.php");
+include("db-config.php");
 
 class TbqNewsletter
 {

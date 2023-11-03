@@ -5,12 +5,12 @@ session_start();
 <header class="header">
   <nav>
     <div class="logo">
-      <a href="../view/index.php"><img src="../img/logo.png" alt="Logo Gite" ></a>
+      <a href="../index.php"><img src="../img/logo.png" alt="Logo Gite" ></a>
     </div>
     <input type="checkbox" id="menu-toggle">
     <label for="menu-toggle" class="menu-icon">&#9776;</label>
     <ul class="menu">
-      <li><a href="../view/index.php">Accueil</a></li>
+      <li><a href="../index.php">Accueil</a></li>
       <li><a href="../view/disponibilites.php">Disponibilités</a></li>
       <li><a href="../view/coordonnees.php">Coordonnées</a></li>
       <?php

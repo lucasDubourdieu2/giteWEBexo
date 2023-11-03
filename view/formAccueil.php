@@ -13,7 +13,7 @@
 <body>
     <?php include '../includes/front-header.php';
     if (!isset($_SESSION['utilisateur_connecte']) || $_SESSION['utilisateur_connecte'] !== true || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
-        header('Location: ../view/index.php');
+        header('Location: ../index.php');
         exit;
     } ?>
     <div class="corpsPage">

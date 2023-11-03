@@ -5,7 +5,7 @@
  * @package Gestion du calendrier de reservation
  * @date 18-10-2023
  */
-include("../model/db-config.php");
+include("db-config.php");
 class tbqCalendrier
 {
 
