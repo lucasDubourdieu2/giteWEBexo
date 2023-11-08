@@ -23,6 +23,7 @@ body {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
 }
 
 h1 {
@@ -96,4 +97,12 @@ button {
         font-size: 25px;
     }
 
+}
+
+@media screen and (min-width: 993px) {
+    .container {
+     width: 450px;
+     margin: auto;
+    
+    }
 }

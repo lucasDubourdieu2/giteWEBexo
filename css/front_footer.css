@@ -5,6 +5,7 @@
     align-items: center;
     text-align: center;
     margin-top: 20px;
+    position: bottom;
 
 }
 .doubleSection{
@@ -23,14 +24,45 @@
     padding: 10px 20px;
     background-color: #F1EED9;
     color: black;
+    font-size: 30px;
     border-color: black;
     text-decoration: none;
     border-radius: 5px;
     margin-top: 10px;
     height: auto;
-    width: 200px;
+    width: 300px;
 }
 
 .btnFooter:hover {
     background-color: #DFDCC9;
+}
+
+#logoFacebook {
+    border-radius: 5px;
+    width: 150px;
+    height: auto;
+}
+
+
+@media screen and (min-width: 993px) {
+    #logoFacebook {
+        width: 100px;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    
+    .left-section p,
+    .right-section p {
+        font-size: 20px;
+        line-height: 1.5;
+    }
+
+    .btnFooter {
+       
+        font-size: 16px;
+        height: auto;
+        width: 250px;
+    }
+    
 }

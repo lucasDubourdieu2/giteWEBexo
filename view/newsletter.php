@@ -26,7 +26,7 @@
                 <input type="checkbox" id="consentement" name="consentement" required>
                 <label for="consentement">Je consens à recevoir des e-mails de la newsletter.</label>
                 <br>
-                <input type="submit" class="btnNewsletter" value="S'inscrire">
+                <input id="buttonNews" type="submit" class="btnNewsletter" value="S'inscrire">
                 <?php
                 if (!empty($_SESSION['emailValide'])) { ?>
                     <p class="msgValid"><?php echo $_SESSION['emailValide']; ?></p>

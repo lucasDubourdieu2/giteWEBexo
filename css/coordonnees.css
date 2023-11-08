@@ -8,6 +8,12 @@ body {
 }
 
 
+.coor-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
 .coord {
     text-align: center;
     display: flex;
@@ -15,6 +21,7 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 20px;
+    
 }
 
 .carte {
@@ -49,6 +56,7 @@ ul {
     width: 95%;
     background-color: #F7EDBF;
     box-shadow: 0px 5px 5px rgba(0,0,0,0.3);
+    margin-right: 15px;
 }
 .adresse {
     margin-bottom: 15px;
@@ -68,18 +76,9 @@ ul {
 @media screen and (max-width: 992px) {
     .coord {
         font-size: 30px;
+        align-items: center;
     }
 
-    .coordonnees {
-        width: 100%;
-        height: auto;
-        font-size: 100px;
-    }
-
-    .adresse {
-        width: 100%;   
-    }
-  
     .corpsPage {
         margin-right: 30px;
         margin-left: 30px;
@@ -88,13 +87,13 @@ ul {
 
     .coor-container {
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
+        flex-wrap: wrap;
         width: 100%;
+        align-items: center;
     }
 
-    .adresse {
-        margin-left: 15px;
-    }
+  
 }
 
 
