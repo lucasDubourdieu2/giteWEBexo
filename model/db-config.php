@@ -11,10 +11,11 @@
  * @return mysqli|false Un objet mysqli représentant la connexion à la base de données ou false en cas d'échec.
  */
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "giteAveyron";
+ $servername = "mysql-ruiza3il.alwaysdata.net";
+ $username = "ruiza3il";
+ $password = "4sqrRB27RDZ!";
+ $database = "ruiza3il_gitefiguies";
+ 
 
 
 $conn = new mysqli($servername, $username, $password, $database);
